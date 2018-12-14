@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0038AD1F-66B6-4C7F-861D-B00E79193F8D}</ProjectGuid>
+    <ProjectGuid>{9446C2B1-69CE-402E-A55C-6B06322E3C4A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Spiders</RootNamespace>
-    <AssemblyName>Spiders</AssemblyName>
+    <RootNamespace>Spider_WEIBO</RootNamespace>
+    <AssemblyName>Spider_WEIBO</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spider_WEIBO_HOT.cs" />
+    <Compile Include="WHotPoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
