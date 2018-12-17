@@ -22,23 +22,31 @@ namespace Spider_WEIBO
             hotPoints = new List<WHotPoint>();
             //添加cookie
             Cookie cookie = new Cookie("SUBP", "0033WrSXqPxfM725Ws9jqgMF55529P9D9WFCWhNRApjf73YoqnFQbw.x5JpX5K2hUgL.FoqR1hB4SonXehM2dJLoIp7LxKML1KBLBKnLxKqL1hnLBoMXS0-Xe0-fShnX", "/", ".weibo.com");
-            this.CookiesContainer = new CookieContainer();
-            this.CookiesContainer.Add(cookie);
+           //string cookies= "SINAGLOBAL = 9374468169968.848.1544759764946; un = 1073788244@qq.com; wvr = 6; UOR =,,login.sina.com.cn; Ugrow - G0 = 5b31332af1361e117ff29bb32e4d8439; SUBP = 0033WrSXqPxfM725Ws9jqgMF55529P9D9WFCWhNRApjf73YoqnFQbw.x5JpX5KMhUgL.FoqR1hB4SonXehM2dJLoIp7LxKML1KBLBKnLxKqL1hnLBoMXS0 - Xe0 - fShnX; ALF = 1576410670; SSOLoginState = 1544874673; SCF = ApqNez1pTS4tXDkaJFe5zVtKRDsIUcR32lNVVrq6g_KIQwjzxH_XZIqouFMXiQITwdIogur_YlGFFWMrqzLpi4I.; SUB = _2A25xEJriDeRhGeBG41YY9ibIyzuIHXVSZ4sqrDV8PUNbmtBeLRjlkW9NQfhw_AzZFaAjMIJF87gzCIlVnDz21C5s; SUHB = 03oVSoBB2po_Ym; YF - V5 - G0 = bb389e7e25cccb1fadd4b1334ab013c1; _s_tentry = -; Apache = 6696694567241.79.1544874685716; ULV = 1544874685737:4:4:4:6696694567241.79.1544874685716:1544787969783; YF - Page - G0 = 4c69ce1a525bc6d50f53626826cd2894; wb_view_log_6884968407 = 1536 * 8641.5625; WBtopGlobal_register_version = 75a427cc2b27cf18";
+           // string cook = CookieHelper.GetCookies(cookies, new Uri("https://weibo.com/u/6884968407/home"));
+           // CookieCollection cookieCollection = new CookieCollection();
+            //cookieCollection= CookieHelper.GetCookiesByHeader(cookies);
+            //CookiesContainer = new CookieContainer();
+           //CookiesContainer.Add(cookie);
+
+            OnCompleted += (s, e) => {
+                Console.WriteLine(e.PageSource);
+            };
+
+            OnStart += (s, e) =>
+            {
+                Console.Write("ready");
+            };
 
             OnSetting += (s, e) =>
             {
-                Console.WriteLine(e);
+                Console.WriteLine(e.ToString());
             };
 
-            OnCompleted += (s, e) => {
-                System.Console.WriteLine(e.PageSource);
-            };
-
-                
 
             OnError += (s, e) =>
             {
-                System.Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message);
             };
         }
         /// <summary>
