@@ -17,7 +17,7 @@
 
         public override string ToString()
         {
-            return Rank + "   " + Title + '\n' + "热度：" + HotDegree + '\n' + "详情链接：" + Url+ "\n------------------------\n";
+            return "排行："+Rank + "   " + "关键词："+Title + '\n'+'\n' + "热度：" + HotDegree + '\n' + '\n' + "详情链接：" + Url+ "\n------------------------\n";
         }
     }
 }
