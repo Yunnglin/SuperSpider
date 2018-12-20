@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using HT.Spider;
 namespace Spider_ZHIHU
 {
-    public class Spider_ZHIHU_HOT:HTSpider
+    public class Spider_ZHIHU_HOT:HTSpider,IController
     {
         public List<HotPoint_ZHIHU> hotList;
         public Spider_ZHIHU_HOT()
@@ -32,13 +32,21 @@ namespace Spider_ZHIHU
         }
 
         /// <summary>
+        /// 开始爬行
+        /// </summary>
+        public void StartCrawling()
+        {
+            this.GetFunc(new Uri("https://www.zhihu.com/hot"));
+        }
+
+        /// <summary>
         /// 对页面内容进行解析抓取
         /// </summary>
         /// <param name="sendor"></param>
         /// <param name="args"></param>
         private void Parse(object sendor, OnCompletedEventArgs args)
         {
-            string strRef = @"(<div class=""HotItem-content"">)[\s|\S]+?<\/div><\/div><\/span><\/div><\/div>";//@"(href|HREF)[ ]*=[ ]*[""'][^""'#(img)]+[""']"
+            string strRef = @"(<div class=""HotItem-content"">)[\s|\S]+?<\/div><\/div><\/span><\/div><\/div>";
             MatchCollection matches = new Regex(strRef).Matches(args.PageSource);
             foreach (Match match in matches)
             {
@@ -51,7 +59,7 @@ namespace Spider_ZHIHU
                 }
                 catch (Exception excep)
                 {
-                    //System.Console.WriteLine(excep.Message);
+                    System.Console.WriteLine(excep.Message);
                 }
 
                 String degree = new Regex(@"<\/svg>.+?万").Match(match.Value).Value.Substring(6).Trim('万');

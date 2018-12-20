@@ -50,6 +50,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spider_ZHIHU.cs" />
+    <Compile Include="Spider_ZHIHU_ANSWER.cs" />
     <Compile Include="Spider_ZHIHU_HOT.cs" />
   </ItemGroup>
   <ItemGroup>
