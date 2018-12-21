@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("MainWin")]
+[assembly: AssemblyTitle("WindowsFormsApp1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MainWin")]
+[assembly: AssemblyProduct("WindowsFormsApp1")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("c83ae84e-d09f-47dc-8567-b90cb12bc35a")]
+[assembly: Guid("ab627ff0-d90f-4f8c-92a9-42698239e58a")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
