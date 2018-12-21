@@ -12,9 +12,11 @@ namespace Spider_WEIBO
         static void Main(string[] args)
         {
             Spider_WEIBO_HOT h = new Spider_WEIBO_HOT();
-            //热榜
-             h.GetFunc(new Uri("https://s.weibo.com/top/summary?cate=realtimehot")).Wait();
-
+            h.StartCrawling().Wait();
+            foreach (var hot in h.hotPoints)
+            {
+                Console.WriteLine(hot);
+            }
             //微博搜索
             // h.GetFunc(new Uri(" https://s.weibo.com/weibo?q=xxx&Refer=article_weibo&page=1")).Wait();
             //  https://s.weibo.com/weibo?q=xxx&Refer=article_weibo&page=1  综合
@@ -24,11 +26,8 @@ namespace Spider_WEIBO
             //h.GetFunc(new Uri("https://weibo.com")).Wait();
             // 
 
-            foreach(var hot in h.hotPoints)
-            {
-                Console.WriteLine(hot);
-            }
-        
+
+
         }
     }
 }

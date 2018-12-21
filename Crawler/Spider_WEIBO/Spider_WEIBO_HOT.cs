@@ -12,11 +12,13 @@ namespace Spider_WEIBO
 {/// <summary>
  /// 爬取微博热搜
  /// </summary>
-    public class Spider_WEIBO_HOT : HTSpider
+    public class Spider_WEIBO_HOT : HTSpider,IController
     {
         //热搜列表
         public List<WHotPoint> hotPoints;
-
+        /// <summary>
+        /// 事件驱动爬取热搜
+        /// </summary>
         public Spider_WEIBO_HOT()
         {
             hotPoints = new List<WHotPoint>();
@@ -46,6 +48,8 @@ namespace Spider_WEIBO
                 Console.WriteLine(e.Message);
             };
         }
+
+
         /// <summary>
         /// 对页面内容进行解析抓取
         /// </summary>
@@ -78,6 +82,19 @@ namespace Spider_WEIBO
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// 继承总控制器，开始爬取
+        /// </summary>
+        /// <returns>布尔值</returns>
+       public async Task<bool> StartCrawling()
+        {
+            return await Task.Run(() =>
+            {
+                this.GetFunc(new Uri("https://s.weibo.com/top/summary?cate=realtimehot")).Wait();
+                return true;
+            });
         }
     }
 }
