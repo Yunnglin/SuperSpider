@@ -1,4 +1,5 @@
 ﻿using HT.Spider;
+using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,13 +40,37 @@ namespace Spider_HUPU
         }
         private void Parse(object sender,OnCompletedEventArgs args)
         {
-           // Console.Write(args.PageSource);
-            string str = @"\b<span\S*<\\span>\b";
-            MatchCollection mc = Regex.Matches(args.PageSource, str);
-            foreach (Match m in mc)
+            HtmlWeb webClient = new HtmlWeb();
+            Encoding encoder = Encoding.GetEncoding("utf-8");
+            HtmlAgilityPack.HtmlDocument doc = webClient.Load("https://bbs.hupu.com/all-gambia");
+
+            HtmlNode htmlNode = doc.DocumentNode;
+            HtmlNodeCollection hrefList = doc.DocumentNode.SelectNodes(".//a[@href]");
+            HtmlNodeCollection titleList = doc.DocumentNode.SelectNodes(".//a[@title]");
+            HtmlNodeCollection emList = doc.DocumentNode.SelectNodes(".//em");
+            
+            int j = 1;int k = 0;
+            for (int i = 54; i < 155; i++, i++)
             {
-                Console.WriteLine(m);
+                string s = emList[k].InnerText;
+                Console.WriteLine(titleList[j].Attributes["title"].Value + "     热度："+s);
+                Console.WriteLine("热帖链接："+"https://bbs.hupu.com" + hrefList[i].Attributes["href"].Value);
+              
+                j++;
+                k++;
+
             }
+          
+            //if (titleList != null)
+            //{
+            //    int i = 1;
+            //    foreach (HtmlNode title in titleList)
+            //    {
+            //        HtmlAttribute att = title.Attributes["title"];
+            //        Console.WriteLine(att.Value+"    "+i);
+            //        i++;
+            //    }
+            //}
             //Console.Write(args.PageSource);
         }
     }
