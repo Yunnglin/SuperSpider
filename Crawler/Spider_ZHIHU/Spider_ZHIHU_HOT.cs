@@ -31,9 +31,7 @@ namespace Spider_ZHIHU
             };
         }
 
-        /// <summary>
-        /// 开始爬行
-        /// </summary>
+        
         public void StartCrawling()
         {
             this.GetFunc(new Uri("https://www.zhihu.com/hot"));

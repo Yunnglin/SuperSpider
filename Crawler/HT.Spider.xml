@@ -6,7 +6,7 @@
     <members>
         <member name="T:HT.Spider.IController">
             <summary>
-            建议将IController作为整个抓取过程控制器
+            将IController作为整个抓取过程控制器
             </summary>
         </member>
         <member name="M:HT.Spider.IController.StartCrawling">
