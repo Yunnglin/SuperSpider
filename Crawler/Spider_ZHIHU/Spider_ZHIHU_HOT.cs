@@ -32,9 +32,12 @@ namespace Spider_ZHIHU
         }
 
         
-        public void StartCrawling()
+        public async Task<bool> StartCrawling()
         {
-            this.GetFunc(new Uri("https://www.zhihu.com/hot"));
+            return await Task.Run(()=>{
+                this.GetFunc(new Uri("https://www.zhihu.com/hot")).Wait();
+                return true;
+            });
         }
 
         /// <summary>
@@ -63,6 +66,11 @@ namespace Spider_ZHIHU
                 String degree = new Regex(@"<\/svg>.+?万").Match(match.Value).Value.Substring(6).Trim('万');
                 hotList.Add(new HotPoint_ZHIHU(url, multiLine, title, Convert.ToInt32(degree)));
             }
+        }
+
+        Task<bool> IController.StartCrawling()
+        {
+            throw new NotImplementedException();
         }
     }
 }

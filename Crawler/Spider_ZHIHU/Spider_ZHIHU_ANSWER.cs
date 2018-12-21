@@ -9,39 +9,44 @@ using HT.Spider;
 
 namespace Spider_ZHIHU
 {
-    public class Spider_ZHIHU_ANSWER : HTSpider, IController
+    public class Spider_ZHIHU_ANSWER:IController
     {
         List<Answer_ZHIHU> answerList;
         private String key;
         SearchSpider_ZHIHU searchSpider;
         GetAnswerSpider_ZHIHU getAnswerSpider;
-        Spider_ZHIHU_ANSWER()
+        Spider_ZHIHU_ANSWER(String key)
         {
             answerList = new List<Answer_ZHIHU>();
-
-
+            this.key = key;
+            searchSpider = new SearchSpider_ZHIHU();
         }
 
 
-        public void StartCrawling()
+        public async Task<bool> StartCrawling()
         {
-            searchSpider.GetFunc(new Uri("https://www.zhihu.com/search?type=content&q=" + key));
-            while(true)
+            return await Task.Run(() =>
             {
-                if(getAnswerSpider.Count>9)
-                {
-                    break;
-                }
-                if(searchSpider.answerUrls.IsEmpty)
-                {
-                    continue;
-                }
-                String url;
-                if(searchSpider.answerUrls.TryDequeue(out url))
-                {
-                    getAnswerSpider.GetFunc(new Uri(url));
-                }
-            }
+                searchSpider.GetFunc(new Uri("https://www.zhihu.com/search?type=content&q=" + key)).ContinueWith((a)=> { Console.WriteLine(a); });
+                //while (true)
+                //{
+                //    if (getAnswerSpider.Count > 9)
+                //    {
+                //        break;
+                //    }
+                //    if (searchSpider.answerUrls.IsEmpty)
+                //    {
+                //        continue;
+                //    }
+                //    String url;
+                //    if (searchSpider.answerUrls.TryDequeue(out url))
+                //    {
+                //        getAnswerSpider.GetFunc(new Uri(url));
+                //    }
+                //}
+                return true;
+            });
+            
         }
     }
 
