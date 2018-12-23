@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using HT.Spider;
 using System.Net;
 using System.Text.RegularExpressions;
+using HtmlAgilityPack;
 
 
 namespace Spider_WEIBO
@@ -67,11 +68,19 @@ namespace Spider_WEIBO
                 {
                     try
                     {
+                        HtmlDocument doc = new HtmlDocument();
+                        doc.LoadHtml(match.Value);
                         String url = "https://s.weibo.com" + new Regex(@"(?<=href="").+?(?="")").Match(match.Value).Value;
                         String title = new Regex(@"(?<=>).+?(?=</a>)").Match(match.Value).Value;
                         title= Regex.Replace(title, @"<img\b[^>]*>", "");
                         String rank = new Regex(@"(?<=<td class=""td-01 ranktop"">).+?(?=</td>)").Match(match.Value).Value;
                         String degree = new Regex(@"(?<=<span>).+?(?=</span>)").Match(match.Value).Value;
+                        HtmlNode icon = doc.DocumentNode.SelectSingleNode(".//i");
+                        if (icon != null)
+                        {
+                            if (icon.InnerText == "荐")
+                                continue;
+                        }
                         if (rank == "")
                             continue;
                         hotPoints.Add(new WHotPoint(Convert.ToInt32(rank), url, title, degree));

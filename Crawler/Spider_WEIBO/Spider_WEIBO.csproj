@@ -55,6 +55,7 @@
     <Compile Include="Spider_WEIBO_HOT.cs" />
     <Compile Include="Spider_WEIBO_Search.cs" />
     <Compile Include="WHotPoint.cs" />
+    <Compile Include="WriteFile.cs" />
     <Compile Include="WSearchResult.cs" />
   </ItemGroup>
   <ItemGroup>

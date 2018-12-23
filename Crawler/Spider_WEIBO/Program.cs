@@ -5,29 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 using HT.Spider;
 
+
 namespace Spider_WEIBO
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Spider_WEIBO_HOT h = new Spider_WEIBO_HOT();
-            h.StartCrawling().Wait();
-            foreach (var hot in h.hotPoints)
-            {
-                Console.WriteLine(hot);
-            }
-            //微博搜索
-            // h.GetFunc(new Uri(" https://s.weibo.com/weibo?q=xxx&Refer=article_weibo&page=1")).Wait();
-            //  https://s.weibo.com/weibo?q=xxx&Refer=article_weibo&page=1  综合
-            // https://s.weibo.com/article?q=xxx&Refer=weibo_article 文章
 
-            //首页
-            //h.GetFunc(new Uri("https://weibo.com")).Wait();
-            // 
+            //Spider_WEIBO_HOT h = new Spider_WEIBO_HOT();
+
+            //h.StartCrawling().Wait();
+            ////写入
+            //foreach (var hot in h.hotPoints)
+            //{
+            //    Console.WriteLine(hot);
+            //}
+
+            //WriteFile w = new WriteFile(@"D:\hotdata.csv",200,600);
+            WriteFile w = new WriteFile(@"D:\hotdata2.csv",200,60);
 
 
-
+            //Spider_WEIBO_Search s = new Spider_WEIBO_Search("哈哈哈",5);
+            //s.StartCrawling().Wait();
+            //foreach(var search in s.searchResults)
+            //{
+            //    Console.WriteLine(search);
+            //}
+            Console.ReadKey();
         }
     }
 }
