@@ -26,8 +26,6 @@ namespace WindowsFormsApp1
 
         private void sinaPanel_Paint(object sender, PaintEventArgs e)
         {
-            WHotPanel hotpanel = new WHotPanel();
-            this.Controls.Add(hotpanel);
             
         }
     }
