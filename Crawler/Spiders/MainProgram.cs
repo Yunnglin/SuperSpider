@@ -10,7 +10,7 @@ namespace Spider_HUPU
         static void Main(string[] args)
         {
             Spider_HUPU_HOSTPOST hOT = new Spider_HUPU_HOSTPOST();
-            hOT.GetFunc(new Uri("https://my.hupu.com/search?q=%E6%B8%B8&fid=&type=undefined&sortby=undefined")).Wait();
+            hOT.GetFunc(new Uri("https://my.hupu.com/search?q=%E7%A0%94%E7%A9%B6%E7%94%9F")).Wait();
             //foreach (var i in hOT.list)
             //{
             //    System.Console.WriteLine(i.ToString());
