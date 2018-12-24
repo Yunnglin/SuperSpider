@@ -23,7 +23,7 @@ namespace Spider_WEIBO
             //}
 
             //WriteFile w = new WriteFile(@"D:\hotdata.csv",200,600);
-            WriteFile w = new WriteFile(@"D:\hotdata2.csv",200,60);
+            WriteFile w = new WriteFile(@"D:\hotdata6.csv",500,100);
 
 
             //Spider_WEIBO_Search s = new Spider_WEIBO_Search("哈哈哈",5);
