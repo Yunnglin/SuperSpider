@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.searchTabControl = new System.Windows.Forms.TabControl();
             this.sinaTabPage = new System.Windows.Forms.TabPage();
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.searchTabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchTabControl
@@ -89,6 +92,7 @@
             this.Name = "Form2";
             this.Text = "获取到的信息";
             this.searchTabControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -99,5 +103,6 @@
         private System.Windows.Forms.TabPage sinaTabPage;
         private System.Windows.Forms.TabPage zhihuTabPage;
         private System.Windows.Forms.TabPage hupuTabPage;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
