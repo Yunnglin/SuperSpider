@@ -45,5 +45,12 @@ namespace Spider_ZHIHU
         /// 赞数
         /// </summary>
         public int UpNumber { get; set; }
+
+        public AnswerDetail(String content,String responder, int voteUp)
+        {
+            Content = content;
+            Responder = responder;
+            UpNumber = voteUp;
+        }
     }
 }

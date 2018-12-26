@@ -23,6 +23,10 @@ namespace Spider_ZHIHU
 
             //添加OnCompleted事件
             OnCompleted += Parse;
+            //OnCompleted += (s, args) =>
+            //{
+            //    Console.WriteLine(args.PageSource);
+            //};
 
             //添加异常处理
             OnError += (s, e) =>
@@ -60,6 +64,7 @@ namespace Spider_ZHIHU
                 }
                 catch (Exception excep)
                 {
+                    Console.WriteLine("内部问题");
                     System.Console.WriteLine(excep.Message);
                 }
 
@@ -67,10 +72,6 @@ namespace Spider_ZHIHU
                 hotList.Add(new HotPoint_ZHIHU(url, multiLine, title, Convert.ToInt32(degree)));
             }
         }
-
-        Task<bool> IController.StartCrawling()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

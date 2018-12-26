@@ -10,7 +10,8 @@ namespace Spider_ZHIHU
     {
         static void Main(string[] args)
         {
-
+            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER("雪中悍刀行");
+            answer.StartCrawling().Wait();
         }
     }
 }
