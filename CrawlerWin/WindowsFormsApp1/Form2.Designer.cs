@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.searchTabControl = new System.Windows.Forms.TabControl();
             this.sinaTabPage = new System.Windows.Forms.TabPage();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.searchTabControl.SuspendLayout();
+            this.sinaTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchTabControl
@@ -51,6 +56,7 @@
             // 
             // sinaTabPage
             // 
+            this.sinaTabPage.Controls.Add(this.mainPanel);
             this.sinaTabPage.Location = new System.Drawing.Point(4, 25);
             this.sinaTabPage.Name = "sinaTabPage";
             this.sinaTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -58,6 +64,14 @@
             this.sinaTabPage.TabIndex = 0;
             this.sinaTabPage.Text = "微博";
             this.sinaTabPage.UseVisualStyleBackColor = true;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(3, 3);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(783, 421);
+            this.mainPanel.TabIndex = 0;
             // 
             // zhihuTabPage
             // 
@@ -89,6 +103,8 @@
             this.Name = "Form2";
             this.Text = "获取到的信息";
             this.searchTabControl.ResumeLayout(false);
+            this.sinaTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -99,5 +115,7 @@
         private System.Windows.Forms.TabPage sinaTabPage;
         private System.Windows.Forms.TabPage zhihuTabPage;
         private System.Windows.Forms.TabPage hupuTabPage;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }

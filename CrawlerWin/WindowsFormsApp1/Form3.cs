@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Spider_ZHIHU;
 
 namespace WindowsFormsApp1
 {
@@ -17,6 +18,15 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-    
+        private void zhihuPanel_Paint(object sender, PaintEventArgs e)
+        {
+            
+           
+        }
+
+        private void sinaPanel_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }

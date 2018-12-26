@@ -49,46 +49,43 @@ namespace Spider_WEIBO
         /// <param name="offset">爬取时间间隔，单位s</param>
         public WriteFile(string path, int max, int offset)
         {
+
+            this.offset = offset;
             this.now = DateTime.Now;
             this.path = path;
             this.max = max;
             this.TimeStart();
             this.WriteCsv();
-            this.offset = offset;
         }
 
-
-        private void WriteCsv()
+        public void WriteCsv()
         {
     
             //判断文件是否存在
-            if (File.Exists(path))
+            if (!File.Exists(path))
             {
-
-            }
-            else
-            {
-                StreamWriter file = new StreamWriter(path, true, Encoding.UTF8);
-                file.WriteLine("name,value,date");
-                file.Close();
+                using (StreamWriter file = new StreamWriter(path, true, Encoding.UTF8))
+                {
+                    file.WriteLine("name,value,date");
+                }
             }
 
 
             //创建写入流
-            StreamWriter writer = new StreamWriter(path, true, Encoding.UTF8);
-            Spider_WEIBO_HOT h = new Spider_WEIBO_HOT();
-            Timer timer = new Timer();
-            h.StartCrawling().Wait();
-            //写入
-            int i = 0;
-            foreach (var hot in h.hotPoints)
+            using (StreamWriter writer = new StreamWriter(path, true, Encoding.UTF8))
             {
-                i++;
-                writer.WriteLine("{0},{1},{2}", hot.Title, hot.HotDegree, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                if (i >= 20)
-                    break;
+                Spider_WEIBO_HOT h = new Spider_WEIBO_HOT();
+                h.StartCrawling().Wait();
+                //写入
+                int i = 0;
+                foreach (var hot in h.hotPoints)
+                {
+                    i++;
+                    writer.WriteLine("{0},{1},{2}", hot.Title, hot.HotDegree, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    if (i >= 20)
+                        break;
+                }
             }
-            writer.Close();
         }
 
         //开始计时
@@ -104,7 +101,7 @@ namespace Spider_WEIBO
         }
 
 
-        public void Ring(object source, ElapsedEventArgs e)//时间到了，执行操作
+        private void Ring(object source, ElapsedEventArgs e)//时间到了，执行操作
         {
             if (count >= max)
                 timer.Stop();

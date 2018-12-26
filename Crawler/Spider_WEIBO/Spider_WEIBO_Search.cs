@@ -13,6 +13,7 @@ namespace Spider_WEIBO
 {
     public class Spider_WEIBO_Search : HTSpider, IController
     {
+
         public ConcurrentQueue<WSearchResult> searchResults;
         private string key;//关键字
         private int count;//数量
@@ -114,7 +115,7 @@ namespace Spider_WEIBO
                     string like = "赞 " + li.InnerText.Trim();
                     count++;
                     searchResults.Enqueue(new WSearchResult(count,name, content, post, like, comment, from));
-                  
+                    //Console.WriteLine(count);
                 }
                 catch (Exception e)
                 {

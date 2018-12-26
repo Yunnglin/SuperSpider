@@ -20,6 +20,10 @@
             base.Dispose(disposing);
         }
 
+
+
+
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -27,19 +31,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
+        { 
             this.hotTabControl = new System.Windows.Forms.TabControl();
             this.sinaTabPage = new System.Windows.Forms.TabPage();
             this.sinaPanel = new System.Windows.Forms.Panel();
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.zhihuPanel = new System.Windows.Forms.Panel();
             this.zhihuLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.zhihuTitleLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
             this.hupuPanel = new System.Windows.Forms.Panel();
             this.hotTabControl.SuspendLayout();
@@ -82,6 +80,7 @@
             this.sinaPanel.Name = "sinaPanel";
             this.sinaPanel.Size = new System.Drawing.Size(799, 425);
             this.sinaPanel.TabIndex = 0;
+            this.sinaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sinaPanel_Paint);
             // 
             // zhihuTabPage
             // 
@@ -102,84 +101,21 @@
             this.zhihuPanel.AutoScroll = true;
             this.zhihuPanel.AutoScrollMinSize = new System.Drawing.Size(450, 450);
             this.zhihuPanel.Controls.Add(this.zhihuLinkLabel);
-            this.zhihuPanel.Controls.Add(this.label5);
-            this.zhihuPanel.Controls.Add(this.zhihuTitleLabel);
-            this.zhihuPanel.Controls.Add(this.label1);
-            this.zhihuPanel.Controls.Add(this.label2);
-            this.zhihuPanel.Controls.Add(this.label3);
-            this.zhihuPanel.Controls.Add(this.label4);
             this.zhihuPanel.Location = new System.Drawing.Point(0, 0);
             this.zhihuPanel.Name = "zhihuPanel";
             this.zhihuPanel.Size = new System.Drawing.Size(799, 421);
             this.zhihuPanel.TabIndex = 0;
-
+            this.zhihuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.zhihuPanel_Paint);
             // 
             // zhihuLinkLabel
             // 
             this.zhihuLinkLabel.AutoSize = true;
-            this.zhihuLinkLabel.Location = new System.Drawing.Point(327, 369);
+            this.zhihuLinkLabel.Location = new System.Drawing.Point(339, 370);
             this.zhihuLinkLabel.Name = "zhihuLinkLabel";
             this.zhihuLinkLabel.Size = new System.Drawing.Size(127, 15);
             this.zhihuLinkLabel.TabIndex = 7;
             this.zhihuLinkLabel.TabStop = true;
             this.zhihuLinkLabel.Text = "点击此处查看更多";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 259);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 15);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "label5";
-            // 
-            // zhihuTitleLabel
-            // 
-            this.zhihuTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.zhihuTitleLabel.AutoSize = true;
-            this.zhihuTitleLabel.Location = new System.Drawing.Point(363, 20);
-            this.zhihuTitleLabel.Name = "zhihuTitleLabel";
-            this.zhihuTitleLabel.Size = new System.Drawing.Size(0, 15);
-            this.zhihuTitleLabel.TabIndex = 1;
-            this.zhihuTitleLabel.Text = "title";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 162);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 209);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 15);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
             // 
             // hupuTabPage
             // 
@@ -227,12 +163,6 @@
         private System.Windows.Forms.Panel sinaPanel;
         private System.Windows.Forms.Panel zhihuPanel;
         private System.Windows.Forms.Panel hupuPanel;
-        private System.Windows.Forms.Label zhihuTitleLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel zhihuLinkLabel;
-        private System.Windows.Forms.Label label5;
     }
 }
