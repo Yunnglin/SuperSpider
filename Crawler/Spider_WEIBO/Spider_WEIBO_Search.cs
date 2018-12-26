@@ -62,16 +62,17 @@ namespace Spider_WEIBO
 
         public async Task<bool> StartCrawling()
         {
-            for (int i = 1; i <= page; i++)
+            await Task.Run(() =>
             {
-                await Task.Run(() =>
+                for (int i = 1; i <= page; i++)
                 {
                     this.GetFunc(new Uri("https://s.weibo.com/weibo?q=" + key + "&Refer=article_weibo&page=" + i)).Wait();
-               
-                });
-            }
-            return true;
+                }
+            });
+             return true;
         }
+           
+     
 
             private void Parse(object sendor, OnCompletedEventArgs args)
         {
@@ -114,7 +115,7 @@ namespace Spider_WEIBO
                     HtmlNode li = cardAction.SelectSingleNode(".//ul/li[4]/a");
                     string like = "赞 " + li.InnerText.Trim();
                     count++;
-                    searchResults.Enqueue(new WSearchResult(count,name, content, post, like, comment, from));
+                    searchResults.Enqueue(new WSearchResult(count, name, content, post, like, comment, from));
                     //Console.WriteLine(count);
                 }
                 catch (Exception e)

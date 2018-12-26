@@ -36,40 +36,88 @@ namespace WindowsFormsApp1
             hupu = h;
             this.key = key;
             Crawling();
-            Add();
+         
         }
 
-        public void Crawling()
+        private void Crawling()
         {
             if (weibo)
             {
-                Spider_WEIBO_Search s = new Spider_WEIBO_Search(key, 1);
-                s.StartCrawling().ContinueWith((S) =>
-                {
-                    foreach (var search in s.searchResults)
-                    {
-                        Console.WriteLine(search);
-                    }
+                weiboCrawling();
+            }
+            if (zhihu)
+            {
+                zhihuCrawling();
+            }
+            if (hupu)
+            {
+                hupuCrawling();
+            }
+        }
 
-                });
-                //Console.WriteLine("SFA");
+        public void weiboCrawling()
+        {
+            Spider_WEIBO_Search s = new Spider_WEIBO_Search(key, 2);
+            s.StartCrawling().ContinueWith((S) =>
+            {
+                //wSearchResults = s.searchResults;
+                //Add();
                 //foreach (var search in s.searchResults)
                 //{
-                //    Label label = new Label();
-                //    label.Text = search.ToString();
-                //    mainPanel.Controls.Add(label);
+                //    Console.WriteLine(search);
                 //}
-            }
+                Invoke(new MethodInvoker(delegate ()
+                {
+                    //do something... 
+
+                    foreach (var search in s.searchResults)
+                    {
+                        TextBox text = new TextBox();
+                        text.Multiline = true;
+                        text.AutoSize = true;
+
+                        text.Width = this.Width / 4;
+                        //  text.Height = this.Height;
+
+                        text.Text += search.ToString();
+                        mainPanel.Controls.Add(text);
+                    }
+
+                }));
+            });
         }
 
-        public void Add()
+        public void zhihuCrawling()
         {
-            foreach (var search in wSearchResults)
-            {
-                Label label = new Label();
-                label.Text = search.ToString();
-                mainPanel.Controls.Add(label);
-            }
+
         }
+
+        public void hupuCrawling()
+        {
+
+        }
+
+        //public void Add()
+        //{
+        //    Invoke(new MethodInvoker(delegate ()
+        //    {
+        //        //do something... 
+               
+        //        foreach (var search in wSearchResults)
+        //        {
+        //            TextBox text = new TextBox();
+        //            text.Multiline = true;
+        //            text.AutoSize = true;
+
+        //            text.Width = this.Width/4;
+        //          //  text.Height = this.Height;
+                    
+        //            text.Text += search.ToString();
+        //            mainPanel.Controls.Add(text);
+        //        }
+           
+        //    }));
+               
+        //}
     }
 }

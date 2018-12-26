@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.searchTabControl = new System.Windows.Forms.TabControl();
             this.sinaTabPage = new System.Windows.Forms.TabPage();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.searchTabControl.SuspendLayout();
             this.sinaTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -65,14 +65,6 @@
             this.sinaTabPage.Text = "微博";
             this.sinaTabPage.UseVisualStyleBackColor = true;
             // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(3, 3);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(783, 421);
-            this.mainPanel.TabIndex = 0;
-            // 
             // zhihuTabPage
             // 
             this.zhihuTabPage.Location = new System.Drawing.Point(4, 25);
@@ -93,6 +85,15 @@
             this.hupuTabPage.TabIndex = 2;
             this.hupuTabPage.Text = "虎扑社区";
             this.hupuTabPage.UseVisualStyleBackColor = true;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.AutoScroll = true;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(3, 3);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(783, 421);
+            this.mainPanel.TabIndex = 0;
             // 
             // Form2
             // 
@@ -116,6 +117,6 @@
         private System.Windows.Forms.TabPage zhihuTabPage;
         private System.Windows.Forms.TabPage hupuTabPage;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.FlowLayoutPanel mainPanel;
     }
 }

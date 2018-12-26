@@ -35,17 +35,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("请选择信息来源！");
                 return;
             }
-            //定义一个string类型的数组来存储用户选择的信息来源，没有选择就是空字符串。
-            string[] infoFrom = { "", "", "" };
-            //int i = 0;
-            //foreach (CheckBox info in info)
-            //{
-            //    if (info.Checked)
-            //    {
-            //        infoFrom[i] = info.Text;
-            //    }
-            //    i++;
-            //}
+
             Form2 form2 = new Form2();
             form2.Choose(keyWord,sinaCheckBox.Checked,zhihuCheckBox.Checked,hupuCheckBox.Checked);
         }

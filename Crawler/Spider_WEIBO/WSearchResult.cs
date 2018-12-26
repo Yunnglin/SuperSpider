@@ -48,10 +48,10 @@ namespace Spider_WEIBO
 
         public override string ToString()
         {
-            return Count+"  博主："+Name+'\n'
-                +"内容摘要："+Content + '\n'
-                +Post+"  "+Like+"  "+Comment+'\n'
-                +"来自："+From+"\n--------------------------\n";
+            return Count+"  博主："+Name+Environment.NewLine
+                +"内容摘要："+Content + Environment.NewLine
+                + Post+"  "+Like+"  "+Comment+ Environment.NewLine
+                + "来自："+From+ Environment.NewLine + "--------------------------+"+Environment.NewLine;
         }
     }
 }

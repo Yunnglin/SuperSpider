@@ -31,6 +31,8 @@ namespace Spider_WEIBO
             {
                 Console.WriteLine(search);
             }
+
+            Console.ReadKey();
         }
     }
 }
