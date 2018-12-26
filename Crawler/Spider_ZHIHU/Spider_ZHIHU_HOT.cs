@@ -11,11 +11,12 @@ namespace Spider_ZHIHU
     public class Spider_ZHIHU_HOT:HTSpider,IController
     {
         public List<HotPoint_ZHIHU> hotList;
-        public Spider_ZHIHU_HOT()
+        private int max;
+        public Spider_ZHIHU_HOT(int max)
         {
             //初始化热点列表
             hotList = new List<HotPoint_ZHIHU>();
-
+            this.max = max;
             //添加cookie实现模拟登录
             Cookie cookie = new Cookie("z_c0", "2|1:0|10:1544258229|4:z_c0|92:Mi4xdk04Z0F3QUFBQUFBRUdGU0x0bU1EU1lBQUFCZ0FsVk50ZEQ0WEFDR2RYNDd3UU9rUGZXNGY2bXl6bW82QWV2NUJB|eec6d9ebaa4334e00fa08bfa930f3d4ab9e565e6a0c55ee15edefd44b4791d46", "/", ".zhihu.com");
             this.CookiesContainer = new System.Net.CookieContainer();
@@ -55,6 +56,10 @@ namespace Spider_ZHIHU
             MatchCollection matches = new Regex(strRef).Matches(args.PageSource);
             foreach (Match match in matches)
             {
+                if(hotList.Count>=max)
+                {
+                    break;
+                }
                 String url = new Regex(@"href="".+?""").Match(match.Value).Value.Substring(5).Trim('"');
                 String title = new Regex(@"h2 class=""HotItem-title"".+?<").Match(match.Value).Value.Substring(25).Trim('<');
                 String multiLine = String.Empty;

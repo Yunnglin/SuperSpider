@@ -55,6 +55,7 @@
     <Compile Include="Spider_ZHIHU.cs" />
     <Compile Include="Spider_ZHIHU_ANSWER.cs" />
     <Compile Include="Spider_ZHIHU_HOT.cs" />
+    <Compile Include="WriteFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
