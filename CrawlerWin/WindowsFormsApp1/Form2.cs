@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spider_WEIBO;
 using Spider_ZHIHU;
-using Spider_HUPU;
+//using Spider_HUPU;
 
 namespace WindowsFormsApp1
 {
@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
 
         //List<WSearchResult> wSearchResults = new List<WSearchResult>();
         ConcurrentQueue<WSearchResult> wSearchResults = new ConcurrentQueue<WSearchResult>();
+        ConcurrentQueue<String> answerUrls = new ConcurrentQueue<string>();
         public void Choose(string key, bool w, bool z, bool h)
         {
             weibo = w;
@@ -72,6 +73,46 @@ namespace WindowsFormsApp1
 
                     foreach (var search in s.searchResults)
                     {
+                        Panel p = new Panel();
+                        Label label1 = new Label();
+                        label1.AutoSize = true;
+                        label1.Text = "ID:"+search.Name;
+                        TextBox t = new TextBox();
+                        t.Multiline = true;
+                        t.Width=400;
+                        t.Height = 300;
+                        t.Text = search.Content;
+               
+                        p.Controls.Add(label1);
+                        p.Controls.Add(t);
+                        //text.Width = this.Width / 4;
+                        //  text.Height = this.Height;
+
+                        //text.Text += search.ToString();
+                        mainPanel.Controls.Add(p);
+                    }
+
+                }));
+            });
+        }
+
+        public void zhihuCrawling()
+        {
+            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key);
+            answer.StartCrawling().ContinueWith((S) =>
+            {
+                //wSearchResults = s.searchResults;
+                //Add();
+                //foreach (var search in s.searchResults)
+                //{
+                //    Console.WriteLine(search);
+                //}
+                Invoke(new MethodInvoker(delegate ()
+                {
+                    //do something... 
+
+                    foreach (var search in answer.AnswerList)
+                    {
                         TextBox text = new TextBox();
                         text.Multiline = true;
                         text.AutoSize = true;
@@ -87,12 +128,17 @@ namespace WindowsFormsApp1
             });
         }
 
-        public void zhihuCrawling()
+        public void hupuCrawling()
         {
 
         }
 
-        public void hupuCrawling()
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mainPanel_Paint_1(object sender, PaintEventArgs e)
         {
 
         }
@@ -102,7 +148,7 @@ namespace WindowsFormsApp1
         //    Invoke(new MethodInvoker(delegate ()
         //    {
         //        //do something... 
-               
+
         //        foreach (var search in wSearchResults)
         //        {
         //            TextBox text = new TextBox();
@@ -111,13 +157,13 @@ namespace WindowsFormsApp1
 
         //            text.Width = this.Width/4;
         //          //  text.Height = this.Height;
-                    
+
         //            text.Text += search.ToString();
         //            mainPanel.Controls.Add(text);
         //        }
-           
+
         //    }));
-               
+
         //}
     }
 }

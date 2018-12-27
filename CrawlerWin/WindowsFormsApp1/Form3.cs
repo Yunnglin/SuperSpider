@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spider_ZHIHU;
+using Spider_WEIBO;
 
 namespace WindowsFormsApp1
 {
@@ -16,9 +17,33 @@ namespace WindowsFormsApp1
         public Form3()
         {
             InitializeComponent();
+          
         }
-
-        private void zhihuPanel_Paint(object sender, PaintEventArgs e)
+        public void weiBo(List<WHotPoint> whots)
+        {
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            foreach (WHotPoint h in whots)
+            {
+                int index = this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[index].Cells[0].Value = h.Title;
+                this.dataGridView1.Rows[index].Cells[1].Value = h.HotDegree;
+                this.dataGridView1.Rows[index].Cells[2].Value = h.Url;
+                dataGridView1.InvalidateRow(index);
+            }
+        }
+        public void zhihu(List<HotPoint_ZHIHU> zhihu_hotlist)
+        {
+            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            foreach (HotPoint_ZHIHU m in zhihu_hotlist)
+            {
+                int index = this.dataGridView2.Rows.Add();
+                this.dataGridView2.Rows[index].Cells[0].Value = m.Title;
+                this.dataGridView2.Rows[index].Cells[1].Value = m.HotDegree;
+                this.dataGridView2.Rows[index].Cells[2].Value = m.Url;
+                dataGridView2.InvalidateRow(index);
+            }
+        }
+                private void zhihuPanel_Paint(object sender, PaintEventArgs e)
         {
             
            
@@ -27,6 +52,11 @@ namespace WindowsFormsApp1
         private void sinaPanel_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

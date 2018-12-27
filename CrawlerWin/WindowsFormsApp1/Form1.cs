@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Spider_WEIBO;
+using Spider_ZHIHU;
+
 
 namespace WindowsFormsApp1
 {
@@ -96,24 +99,24 @@ namespace WindowsFormsApp1
 
         private void hotButton_Click(object sender, EventArgs e)
         {
-            if (!sinaCheckBox.Checked & !hupuCheckBox.Checked & !zhihuCheckBox.Checked)
-            {
-                MessageBox.Show("请选择信息来源！");
-                return;
-            }
-            //定义一个string类型的数组来存储用户选择的信息来源，没有选择就是空字符串。
-            string[] infoFrom = { "", "", "" };
-            int i = 0;
-            foreach (CheckBox info in info)
-            {
-                if (info.Checked)
-                {
-                    infoFrom[i] = info.Text;
-                }
-                i++;
-            }
-
             Form3 form3 = new Form3();
+            Spider_WEIBO_HOT spider_WEIBO_HOT = new Spider_WEIBO_HOT();
+            spider_WEIBO_HOT.StartCrawling().ContinueWith(S =>
+            {
+                Invoke(new MethodInvoker(delegate ()
+                {
+                    form3.weiBo(spider_WEIBO_HOT.hotPoints);
+                }));
+
+            });
+            Spider_ZHIHU_HOT spider_ZHIHU_HOT = new Spider_ZHIHU_HOT(5);
+            spider_ZHIHU_HOT.StartCrawling().ContinueWith(S =>
+            {
+                Invoke(new MethodInvoker(delegate ()
+                {
+                    form3.zhihu(spider_ZHIHU_HOT.hotList);
+                }));
+            });
             form3.Show();
         }
     }

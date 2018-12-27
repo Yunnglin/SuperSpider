@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.searchTabControl = new System.Windows.Forms.TabControl();
             this.sinaTabPage = new System.Windows.Forms.TabPage();
+            this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.searchTabControl.SuspendLayout();
             this.sinaTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchTabControl
@@ -65,6 +62,16 @@
             this.sinaTabPage.Text = "微博";
             this.sinaTabPage.UseVisualStyleBackColor = true;
             // 
+            // mainPanel
+            // 
+            this.mainPanel.AutoScroll = true;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(3, 3);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(783, 421);
+            this.mainPanel.TabIndex = 0;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint_1);
+            // 
             // zhihuTabPage
             // 
             this.zhihuTabPage.Location = new System.Drawing.Point(4, 25);
@@ -86,15 +93,6 @@
             this.hupuTabPage.Text = "虎扑社区";
             this.hupuTabPage.UseVisualStyleBackColor = true;
             // 
-            // mainPanel
-            // 
-            this.mainPanel.AutoScroll = true;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(3, 3);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(783, 421);
-            this.mainPanel.TabIndex = 0;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -105,7 +103,6 @@
             this.Text = "获取到的信息";
             this.searchTabControl.ResumeLayout(false);
             this.sinaTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -113,10 +110,9 @@
         #endregion
 
         private System.Windows.Forms.TabControl searchTabControl;
-        private System.Windows.Forms.TabPage sinaTabPage;
         private System.Windows.Forms.TabPage zhihuTabPage;
         private System.Windows.Forms.TabPage hupuTabPage;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.TabPage sinaTabPage;
         private System.Windows.Forms.FlowLayoutPanel mainPanel;
     }
 }

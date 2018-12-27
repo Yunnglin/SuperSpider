@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spider_WEIBO", "..\Crawler\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spider_ZHIHU", "..\Crawler\Spider_ZHIHU\Spider_ZHIHU.csproj", "{5F1BC5E1-4F05-469E-9D65-9D59822EC7CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spider_HUPU", "..\Crawler\Spiders\Spider_HUPU.csproj", "{0038AD1F-66B6-4C7F-861D-B00E79193F8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spider_Baidu", "..\Crawler\Spiders\Spider_Baidu.csproj", "{0038AD1F-66B6-4C7F-861D-B00E79193F8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
