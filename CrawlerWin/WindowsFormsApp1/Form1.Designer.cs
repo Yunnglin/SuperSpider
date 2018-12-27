@@ -118,7 +118,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(396, 37);
             this.button1.TabIndex = 9;
-            this.button1.Text = "热点追踪";
+            this.button1.Text = "热点监控";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -141,7 +141,7 @@
             // searchButton
             // 
             this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchButton.Location = new System.Drawing.Point(166, 151);
+            this.searchButton.Location = new System.Drawing.Point(179, 143);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(111, 50);
             this.searchButton.TabIndex = 0;
@@ -156,6 +156,7 @@
             this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Form1";
+            this.Text = "Super Spider";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);

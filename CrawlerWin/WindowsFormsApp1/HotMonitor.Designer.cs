@@ -39,7 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.Resulabel = new System.Windows.Forms.Label();
+            this.Resultabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.timelable = new System.Windows.Forms.Label();
@@ -162,7 +162,7 @@
             // 
             this.groupBox.Controls.Add(this.numlable);
             this.groupBox.Controls.Add(this.timelable);
-            this.groupBox.Controls.Add(this.Resulabel);
+            this.groupBox.Controls.Add(this.Resultabel);
             this.groupBox.Controls.Add(this.label4);
             this.groupBox.Controls.Add(this.label3);
             this.groupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -173,14 +173,14 @@
             this.groupBox.TabStop = false;
             this.groupBox.Text = "运行信息";
             // 
-            // Resulabel
+            // Resultabel
             // 
-            this.Resulabel.AutoSize = true;
-            this.Resulabel.Location = new System.Drawing.Point(87, 98);
-            this.Resulabel.Name = "Resulabel";
-            this.Resulabel.Size = new System.Drawing.Size(59, 12);
-            this.Resulabel.TabIndex = 17;
-            this.Resulabel.Text = "运行中...";
+            this.Resultabel.AutoSize = true;
+            this.Resultabel.Location = new System.Drawing.Point(87, 98);
+            this.Resultabel.Name = "Resultabel";
+            this.Resultabel.Size = new System.Drawing.Size(59, 12);
+            this.Resultabel.TabIndex = 17;
+            this.Resultabel.Text = "运行中...";
             // 
             // label4
             // 
@@ -248,7 +248,7 @@
         private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.Label numlable;
         private System.Windows.Forms.Label timelable;
-        private System.Windows.Forms.Label Resulabel;
+        private System.Windows.Forms.Label Resultabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
     }

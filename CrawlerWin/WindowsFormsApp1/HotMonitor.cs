@@ -18,12 +18,13 @@ namespace WindowsFormsApp1
         string foldPath;
         Timer timer1;
         Spider_WEIBO.WriteFile w;
-        Stopwatch myWatch = Stopwatch.StartNew();
+        Stopwatch myWatch;
         public HotMonitor()
         {
             InitializeComponent();
             ResumeBtn.Visible = false;
             PauseBtn.Visible = true;
+            Resultabel.Text = "设置中...";
         }
 
         private void timer1EventProcessor(object source, EventArgs e)
@@ -34,6 +35,11 @@ namespace WindowsFormsApp1
             }
             timelable.Text = myWatch.Elapsed.ToString();
             numlable.Text = w.GetCount().ToString();
+            if(w.GetCount().ToString()== textBoxNum.Text)
+            {
+                myWatch.Stop();
+                Resultabel.Text = "监控完成！！！";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,11 +51,11 @@ namespace WindowsFormsApp1
             {
                 foldPath = dialog.SelectedPath;
                 Console.WriteLine(foldPath);
-
+                
             }
         }
 
-        private void StartBtn_Click(object sender, EventArgs e)
+        private void StartBtn_Click(object sender, EventArgs e)//开始
         {
             if (foldPath == "")
             {
@@ -59,13 +65,15 @@ namespace WindowsFormsApp1
             try
             {
                 timer1 = new Timer();
-                timer1.Interval = 1000;
+                timer1.Interval = 10;
                 timer1.Tick += new EventHandler(timer1EventProcessor);//添加事件
                 timer1.Enabled = true;
                 timer1.Start();
+                myWatch = Stopwatch.StartNew();
                 myWatch.Start();
                 w = new Spider_WEIBO.WriteFile(foldPath + '\\' +"微博热榜"+ DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".csv", Convert.ToInt32(textBoxNum.Text), Convert.ToInt32(textBoxOffset.Text));
-                
+                StartBtn.Enabled = false;
+                Resultabel.Text = "运行中...";
             }
             catch (Exception ex)
             {
@@ -73,7 +81,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void PauseBtn_Click(object sender, EventArgs e)
+        private void PauseBtn_Click(object sender, EventArgs e)//暂停
         {
             if (w != null)
             {
@@ -82,19 +90,22 @@ namespace WindowsFormsApp1
                 PauseBtn.Visible = false;
                 timer1.Stop();
                 myWatch.Stop();
+                Resultabel.Text = "暂停中...";
             }
         }
 
-        private void StopBtn_Click(object sender, EventArgs e)
+        private void StopBtn_Click(object sender, EventArgs e)//取消
         {
             if (w != null)
             {
                 w.TimeStop();
                 timer1.Dispose();
+                StartBtn.Enabled = true;
+                Resultabel.Text = "设置中...";
             }
         }
 
-        private void ResumeBtn_Click(object sender, EventArgs e)
+        private void ResumeBtn_Click(object sender, EventArgs e)//继续
         {
             if (w != null)
             {
@@ -103,6 +114,7 @@ namespace WindowsFormsApp1
                 PauseBtn.Visible = true;
                 timer1.Start();
                 myWatch.Start();
+                Resultabel.Text = "运行中...";
             }
 
         }

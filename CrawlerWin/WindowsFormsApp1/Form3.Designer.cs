@@ -36,21 +36,20 @@
             this.sinaTabPage = new System.Windows.Forms.TabPage();
             this.sinaPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.title_sina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotdegree_sina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.url_sina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.zhihuPanel = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.title_zhihu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotdegree_zhihu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.url_zhihu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.bd_tittle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bd_degree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bd_content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bd_url = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.title_sina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotdegree_sina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.url_sina = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.title_zhihu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotdegree_zhihu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.url_zhihu = new System.Windows.Forms.DataGridViewLinkColumn();
             this.hotTabControl.SuspendLayout();
             this.sinaTabPage.SuspendLayout();
             this.sinaPanel.SuspendLayout();
@@ -116,24 +115,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // title_sina
-            // 
-            this.title_sina.HeaderText = "标题";
-            this.title_sina.Name = "title_sina";
-            this.title_sina.Width = 400;
-            // 
-            // hotdegree_sina
-            // 
-            this.hotdegree_sina.HeaderText = "热度";
-            this.hotdegree_sina.Name = "hotdegree_sina";
-            this.hotdegree_sina.Width = 150;
-            // 
-            // url_sina
-            // 
-            this.url_sina.HeaderText = "超链接";
-            this.url_sina.Name = "url_sina";
-            this.url_sina.Width = 300;
-            // 
             // zhihuTabPage
             // 
             this.zhihuTabPage.Controls.Add(this.zhihuPanel);
@@ -174,24 +155,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(711, 471);
             this.dataGridView2.TabIndex = 0;
             // 
-            // title_zhihu
-            // 
-            this.title_zhihu.HeaderText = "回答";
-            this.title_zhihu.Name = "title_zhihu";
-            this.title_zhihu.Width = 400;
-            // 
-            // hotdegree_zhihu
-            // 
-            this.hotdegree_zhihu.HeaderText = "热度";
-            this.hotdegree_zhihu.Name = "hotdegree_zhihu";
-            this.hotdegree_zhihu.Width = 150;
-            // 
-            // url_zhihu
-            // 
-            this.url_zhihu.HeaderText = "超链接";
-            this.url_zhihu.Name = "url_zhihu";
-            this.url_zhihu.Width = 300;
-            // 
             // hupuTabPage
             // 
             this.hupuTabPage.Controls.Add(this.dataGridView3);
@@ -209,7 +172,6 @@
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bd_tittle,
             this.bd_degree,
-            this.bd_content,
             this.bd_url});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
@@ -230,17 +192,51 @@
             this.bd_degree.HeaderText = "热度";
             this.bd_degree.Name = "bd_degree";
             // 
-            // bd_content
-            // 
-            this.bd_content.HeaderText = "内容";
-            this.bd_content.Name = "bd_content";
-            this.bd_content.Width = 300;
-            // 
             // bd_url
             // 
             this.bd_url.HeaderText = "超链接";
             this.bd_url.Name = "bd_url";
             this.bd_url.Width = 200;
+            // 
+            // title_sina
+            // 
+            this.title_sina.HeaderText = "标题";
+            this.title_sina.Name = "title_sina";
+            this.title_sina.Width = 200;
+            // 
+            // hotdegree_sina
+            // 
+            this.hotdegree_sina.HeaderText = "热度";
+            this.hotdegree_sina.Name = "hotdegree_sina";
+            this.hotdegree_sina.Width = 150;
+            // 
+            // url_sina
+            // 
+            this.url_sina.HeaderText = "超链接";
+            this.url_sina.Name = "url_sina";
+            this.url_sina.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.url_sina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.url_sina.Width = 300;
+            // 
+            // title_zhihu
+            // 
+            this.title_zhihu.HeaderText = "回答";
+            this.title_zhihu.Name = "title_zhihu";
+            this.title_zhihu.Width = 400;
+            // 
+            // hotdegree_zhihu
+            // 
+            this.hotdegree_zhihu.HeaderText = "热度";
+            this.hotdegree_zhihu.Name = "hotdegree_zhihu";
+            this.hotdegree_zhihu.Width = 150;
+            // 
+            // url_zhihu
+            // 
+            this.url_zhihu.HeaderText = "超链接";
+            this.url_zhihu.Name = "url_zhihu";
+            this.url_zhihu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.url_zhihu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.url_zhihu.Width = 300;
             // 
             // Form3
             // 
@@ -272,18 +268,17 @@
         private System.Windows.Forms.Panel sinaPanel;
         private System.Windows.Forms.Panel zhihuPanel;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn title_sina;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hotdegree_sina;
-        private System.Windows.Forms.DataGridViewTextBoxColumn url_sina;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn title_zhihu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hotdegree_zhihu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn url_zhihu;
         private System.Windows.Forms.TabPage hupuTabPage;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn bd_tittle;
         private System.Windows.Forms.DataGridViewTextBoxColumn bd_degree;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bd_content;
         private System.Windows.Forms.DataGridViewLinkColumn bd_url;
+        private System.Windows.Forms.DataGridViewTextBoxColumn title_sina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotdegree_sina;
+        private System.Windows.Forms.DataGridViewLinkColumn url_sina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn title_zhihu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotdegree_zhihu;
+        private System.Windows.Forms.DataGridViewLinkColumn url_zhihu;
     }
 }
