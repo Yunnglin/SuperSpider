@@ -122,5 +122,11 @@ namespace WindowsFormsApp1
             form3.baidu(topPost.TopPosts);
             form3.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HotMonitor hotMonitor = new HotMonitor();
+            hotMonitor.Show();
+        }
     }
 }

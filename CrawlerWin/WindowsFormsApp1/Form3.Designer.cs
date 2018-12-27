@@ -67,55 +67,52 @@
             this.hotTabControl.Controls.Add(this.sinaTabPage);
             this.hotTabControl.Controls.Add(this.zhihuTabPage);
             this.hotTabControl.Controls.Add(this.hupuTabPage);
-            this.hotTabControl.Location = new System.Drawing.Point(-3, 0);
-            this.hotTabControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hotTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hotTabControl.Location = new System.Drawing.Point(0, 0);
+            this.hotTabControl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.hotTabControl.Name = "hotTabControl";
             this.hotTabControl.SelectedIndex = 0;
-            this.hotTabControl.Size = new System.Drawing.Size(908, 540);
+            this.hotTabControl.Size = new System.Drawing.Size(723, 503);
             this.hotTabControl.TabIndex = 0;
             // 
             // sinaTabPage
             // 
             this.sinaTabPage.Controls.Add(this.sinaPanel);
-            this.sinaTabPage.Location = new System.Drawing.Point(4, 28);
-            this.sinaTabPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sinaTabPage.Location = new System.Drawing.Point(4, 22);
+            this.sinaTabPage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.sinaTabPage.Name = "sinaTabPage";
-            this.sinaTabPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sinaTabPage.Size = new System.Drawing.Size(900, 508);
+            this.sinaTabPage.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.sinaTabPage.Size = new System.Drawing.Size(715, 477);
             this.sinaTabPage.TabIndex = 0;
             this.sinaTabPage.Text = "微博";
             this.sinaTabPage.UseVisualStyleBackColor = true;
             // 
             // sinaPanel
             // 
-            this.sinaPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.sinaPanel.AutoScroll = true;
             this.sinaPanel.AutoScrollMinSize = new System.Drawing.Size(450, 450);
             this.sinaPanel.Controls.Add(this.dataGridView1);
-            this.sinaPanel.Location = new System.Drawing.Point(0, 0);
-            this.sinaPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sinaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sinaPanel.Location = new System.Drawing.Point(2, 3);
+            this.sinaPanel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.sinaPanel.Name = "sinaPanel";
-            this.sinaPanel.Size = new System.Drawing.Size(899, 510);
+            this.sinaPanel.Size = new System.Drawing.Size(711, 471);
             this.sinaPanel.TabIndex = 0;
             this.sinaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sinaPanel_Paint);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.title_sina,
             this.hotdegree_sina,
             this.url_sina});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(861, 558);
+            this.dataGridView1.Size = new System.Drawing.Size(711, 471);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -140,27 +137,25 @@
             // zhihuTabPage
             // 
             this.zhihuTabPage.Controls.Add(this.zhihuPanel);
-            this.zhihuTabPage.Location = new System.Drawing.Point(4, 28);
-            this.zhihuTabPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.zhihuTabPage.Location = new System.Drawing.Point(4, 22);
+            this.zhihuTabPage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.zhihuTabPage.Name = "zhihuTabPage";
-            this.zhihuTabPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.zhihuTabPage.Size = new System.Drawing.Size(900, 508);
+            this.zhihuTabPage.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.zhihuTabPage.Size = new System.Drawing.Size(715, 477);
             this.zhihuTabPage.TabIndex = 1;
             this.zhihuTabPage.Text = "知乎";
             this.zhihuTabPage.UseVisualStyleBackColor = true;
             // 
             // zhihuPanel
             // 
-            this.zhihuPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.zhihuPanel.AutoScroll = true;
             this.zhihuPanel.AutoScrollMinSize = new System.Drawing.Size(450, 450);
             this.zhihuPanel.Controls.Add(this.dataGridView2);
-            this.zhihuPanel.Location = new System.Drawing.Point(0, 0);
-            this.zhihuPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.zhihuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zhihuPanel.Location = new System.Drawing.Point(2, 3);
+            this.zhihuPanel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.zhihuPanel.Name = "zhihuPanel";
-            this.zhihuPanel.Size = new System.Drawing.Size(899, 505);
+            this.zhihuPanel.Size = new System.Drawing.Size(711, 471);
             this.zhihuPanel.TabIndex = 0;
             this.zhihuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.zhihuPanel_Paint);
             // 
@@ -173,10 +168,10 @@
             this.url_zhihu});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(899, 505);
+            this.dataGridView2.Size = new System.Drawing.Size(711, 471);
             this.dataGridView2.TabIndex = 0;
             // 
             // title_zhihu
@@ -200,10 +195,10 @@
             // hupuTabPage
             // 
             this.hupuTabPage.Controls.Add(this.dataGridView3);
-            this.hupuTabPage.Location = new System.Drawing.Point(4, 28);
-            this.hupuTabPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hupuTabPage.Location = new System.Drawing.Point(4, 22);
+            this.hupuTabPage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.hupuTabPage.Name = "hupuTabPage";
-            this.hupuTabPage.Size = new System.Drawing.Size(900, 508);
+            this.hupuTabPage.Size = new System.Drawing.Size(715, 477);
             this.hupuTabPage.TabIndex = 2;
             this.hupuTabPage.Text = "百度贴吧";
             this.hupuTabPage.UseVisualStyleBackColor = true;
@@ -218,9 +213,10 @@
             this.bd_url});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 30;
-            this.dataGridView3.Size = new System.Drawing.Size(900, 508);
+            this.dataGridView3.Size = new System.Drawing.Size(715, 477);
             this.dataGridView3.TabIndex = 0;
             // 
             // bd_tittle
@@ -248,11 +244,11 @@
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 540);
+            this.ClientSize = new System.Drawing.Size(723, 503);
             this.Controls.Add(this.hotTabControl);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Form3";
             this.Text = "当前热点信息";
             this.hotTabControl.ResumeLayout(false);
