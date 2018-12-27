@@ -7,17 +7,17 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Spider_HUPU
+namespace Spider_Baidu
 {
-    public class Spider_HUPU
+    public class Spider_Baidu
     {
   
     }
-    public class Spider_HUPU_HOSTPOST:HTSpider
+    public class Spider_Baidu_HOSTPOST : HTSpider
     {
         public List<TopPost> list;
 
-        public Spider_HUPU_HOSTPOST()
+        public Spider_Baidu_HOSTPOST()
         {
             list = new List<TopPost>();
 
@@ -38,7 +38,7 @@ namespace Spider_HUPU
                 request.Headers.Add("Cache-Control", "no-cache");
             };
         }
-        public void HotTop()                //获得今日热帖
+        public TopPost HotTop()                //获得今日热帖
         {
             HtmlWeb webClient = new HtmlWeb();
             Encoding encoder = Encoding.GetEncoding("utf-8");
@@ -49,32 +49,40 @@ namespace Spider_HUPU
             HtmlNodeCollection emList = doc.DocumentNode.SelectNodes(".//p");
             HtmlNodeCollection HotList = doc.DocumentNode.SelectNodes(".//span");
             int i, j = 1, k = 3;
+            TopPost List = new TopPost();
             for (i = 12; i < 32; i++)
             {
-
-                Console.WriteLine("热帖标题：" + titleList[i].InnerText);
-                Console.WriteLine("热帖简述：" + emList[j].InnerText);
-                Console.WriteLine("热度：" + HotList[k].InnerText);
-                Console.WriteLine("链接：" + hrefList[i].Attributes["href"].Value);
+                TopPost newTop = new TopPost(titleList[i].InnerText, hrefList[i].Attributes["href"].Value, HotList[k].InnerText, emList[j].InnerText);
+                List.TopPosts.Add(newTop);
                 k = k + 2;
                 j++;
             }
+            return List;
         }
-        public void LookFor(String input)   //关键词搜索
+        public SearchResult LookFor(String input)   //关键词搜索
         {
             HtmlWeb webClient = new HtmlWeb();
             string url = "https://tieba.baidu.com/f/good?kw=" + input;
             Encoding encoder = Encoding.GetEncoding("utf-8");
             HtmlAgilityPack.HtmlDocument doc = webClient.Load(url);
             HtmlNode LookFor = doc.DocumentNode;
-            HtmlNodeCollection ResultTitle = doc.DocumentNode.SelectNodes(".//a[@title]");
+            SearchResult result = new SearchResult();
             HtmlNodeCollection ResultHerf = doc.DocumentNode.SelectNodes(".//a[contains(@href,'fr=good')]");
-
-            for (int i = 0; i < 30; i++)
+            if (ResultHerf != null)
             {
-                int j = i + 15;
-                Console.WriteLine("帖子：" + ResultTitle[j].Attributes["title"].Value);
-                Console.WriteLine("帖子链接为：" + "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value);
+                for (int i = 0; i < 30; i++)
+                {
+                    int j = i + 15;
+                    String urlget = "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value;
+                    SearchResult newResult = new SearchResult(ResultHerf[i].Attributes["title"].Value, urlget);
+                    result.lists.Add(newResult);
+                }
+                return result;
+            }
+            else
+            {
+                Console.WriteLine("关键词无效，未查到该帖子");
+                return null;
             }
         }
         private void Parse(object sender,OnCompletedEventArgs args)

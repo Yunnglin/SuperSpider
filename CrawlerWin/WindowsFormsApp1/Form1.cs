@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            Form2 form2 = new Form2();
+            Form2 form2 = new Form2(Textbox.Text);
             form2.Choose(keyWord,sinaCheckBox.Checked,zhihuCheckBox.Checked,hupuCheckBox.Checked);
         }
 

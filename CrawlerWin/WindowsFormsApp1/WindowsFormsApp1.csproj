@@ -103,6 +103,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Crawler\Spiders\Spider_Baidu.csproj">
+      <Project>{0038ad1f-66b6-4c7f-861d-b00e79193f8d}</Project>
+      <Name>Spider_Baidu</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Crawler\Spider_WEIBO\Spider_WEIBO.csproj">
       <Project>{9446c2b1-69ce-402e-a55c-6b06322e3c4a}</Project>
       <Name>Spider_WEIBO</Name>
