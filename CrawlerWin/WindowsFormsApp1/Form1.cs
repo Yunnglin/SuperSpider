@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spider_WEIBO;
 using Spider_ZHIHU;
-
+using Spider_Baidu;
 
 namespace WindowsFormsApp1
 {
@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
                 }));
 
             });
-            Spider_ZHIHU_HOT spider_ZHIHU_HOT = new Spider_ZHIHU_HOT(5);
+            Spider_ZHIHU_HOT spider_ZHIHU_HOT = new Spider_ZHIHU_HOT(50);
             spider_ZHIHU_HOT.StartCrawling().ContinueWith(S =>
             {
                 Invoke(new MethodInvoker(delegate ()
@@ -117,6 +117,9 @@ namespace WindowsFormsApp1
                     form3.zhihu(spider_ZHIHU_HOT.hotList);
                 }));
             });
+            Spider_Baidu_HOSTPOST spider_Baidu = new Spider_Baidu_HOSTPOST();
+            TopPost topPost= spider_Baidu.HotTop();
+            form3.baidu(topPost.TopPosts);
             form3.Show();
         }
     }

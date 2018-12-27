@@ -9,8 +9,8 @@ namespace Spider_HUPU
     {
         static void Main(string[] args)
         {
-            Spider_HUPU_HOSTPOST hOT = new Spider_HUPU_HOSTPOST();
-            hOT.GetFunc(new Uri("https://tieba.baidu.com")).Wait();
+            //Spider_HUPU_HOSTPOST hOT = new Spider_HUPU_HOSTPOST();
+            //hOT.GetFunc(new Uri("https://tieba.baidu.com")).Wait();
 
             //foreach (var i in hOT.list)
             //{

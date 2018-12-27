@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spider_ZHIHU;
 using Spider_WEIBO;
+using Spider_Baidu;
 
 namespace WindowsFormsApp1
 {
@@ -43,7 +44,20 @@ namespace WindowsFormsApp1
                 dataGridView2.InvalidateRow(index);
             }
         }
-                private void zhihuPanel_Paint(object sender, PaintEventArgs e)
+        public void baidu(List<TopPost> plist)
+        {
+            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            foreach (TopPost m in plist)
+            {
+                int index = this.dataGridView3.Rows.Add();
+                this.dataGridView3.Rows[index].Cells[0].Value = m.Title;
+                this.dataGridView3.Rows[index].Cells[1].Value = m.Heat;
+                this.dataGridView3.Rows[index].Cells[2].Value = m.Content;
+                this.dataGridView3.Rows[index].Cells[2].Value = m.html;
+                dataGridView3.InvalidateRow(index);
+            }
+        }
+        private void zhihuPanel_Paint(object sender, PaintEventArgs e)
         {
             
            
@@ -55,6 +69,11 @@ namespace WindowsFormsApp1
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void hupuPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

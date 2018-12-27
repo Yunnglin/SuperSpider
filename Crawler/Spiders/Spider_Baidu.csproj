@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainProgram.cs" />
+    <Compile Include="SearchResult.cs" />
     <Compile Include="TopPost.cs" />
     <Compile Include="Spider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,24 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spider_HUPU
+namespace Spider_Baidu
 {
    public class TopPost
    {
      public String html { get; set; }
+     public String Title { get; set; }
      public String Content { get; set; }
      public String Heat { get; set; }
 
-     public TopPost(string a,string b,string c)
+     public TopPost(string Title,string HT,string Heat,string Content)
      {
-            this.html = a;
-            this.Content = b;
-            this.Heat = c;
+            this.html = HT;
+            this.Content =Content;
+            this.Heat = Heat;
+            this.Title = Title;
      }
-        public override string ToString()
-        {
+     public TopPost()
+     {
+        TopPosts = new List<TopPost>();
+     }
+     public  List<TopPost> TopPosts { get;set; }
+     public override string ToString()
+     {
             return html+"  "+Content+"  "+Heat;
-        }
+     }
     }
    
 }
