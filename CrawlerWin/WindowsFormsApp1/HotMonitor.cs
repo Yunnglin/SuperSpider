@@ -119,10 +119,5 @@ namespace WindowsFormsApp1
 
         }
 
-        private void ResuBtn_Click(object sender, EventArgs e)
-        {
-            //调用系统默认的浏览器 
-            System.Diagnostics.Process.Start("");
-        }
     }
 }

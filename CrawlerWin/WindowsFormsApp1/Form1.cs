@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Spider_WEIBO;
 using Spider_ZHIHU;
 using Spider_Baidu;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -127,6 +128,14 @@ namespace WindowsFormsApp1
         {
             HotMonitor hotMonitor = new HotMonitor();
             hotMonitor.Show();
+        }
+
+        private void VisualBtn_Click(object sender, EventArgs e)
+        {
+            //调用系统默认的浏览器 
+            FileInfo fileInfo = new FileInfo(@"../../../../Crawler/Visualization/bargraph.html");
+           Console.WriteLine( fileInfo.FullName);
+            System.Diagnostics.Process.Start(fileInfo.FullName);
         }
     }
 }

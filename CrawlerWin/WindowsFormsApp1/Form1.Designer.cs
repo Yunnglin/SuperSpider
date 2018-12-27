@@ -37,6 +37,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.searchButton = new System.Windows.Forms.Button();
+            this.VisualBtn = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +92,7 @@
             this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(-14, 379);
+            this.textBox2.Location = new System.Drawing.Point(-15, 414);
             this.textBox2.Name = "textBox2";
             this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox2.Size = new System.Drawing.Size(503, 14);
@@ -104,7 +105,7 @@
             this.hotButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.hotButton.Location = new System.Drawing.Point(39, 231);
             this.hotButton.Name = "hotButton";
-            this.hotButton.Size = new System.Drawing.Size(396, 35);
+            this.hotButton.Size = new System.Drawing.Size(396, 41);
             this.hotButton.TabIndex = 8;
             this.hotButton.Text = "点击此处获取当前热门话题";
             this.hotButton.UseVisualStyleBackColor = true;
@@ -124,6 +125,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.VisualBtn);
             this.panel3.Controls.Add(this.zhihuCheckBox);
             this.panel3.Controls.Add(this.Textbox);
             this.panel3.Controls.Add(this.searchButton);
@@ -148,6 +150,16 @@
             this.searchButton.Text = "开始搜索";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // VisualBtn
+            // 
+            this.VisualBtn.Location = new System.Drawing.Point(195, 367);
+            this.VisualBtn.Name = "VisualBtn";
+            this.VisualBtn.Size = new System.Drawing.Size(83, 23);
+            this.VisualBtn.TabIndex = 10;
+            this.VisualBtn.Text = "数据可视化";
+            this.VisualBtn.UseVisualStyleBackColor = true;
+            this.VisualBtn.Click += new System.EventHandler(this.VisualBtn_Click);
             // 
             // Form1
             // 
@@ -174,6 +186,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button VisualBtn;
     }
 }
 
