@@ -14,18 +14,51 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         CheckBox[] info = new CheckBox[3];
+        Boolean textboxHasText;//判断输入框是否有文本
         public Form1()
         {
             InitializeComponent();
             info[0] = sinaCheckBox;
             info[1] = hupuCheckBox;
             info[2] = zhihuCheckBox;
+            setTextbox();
         }
+
+        private void setTextbox()
+        {
+            textboxHasText = false;
+            Textbox.Text = "请输入关键字";
+            Textbox.ForeColor = Color.LightGray;
+            Textbox.Enter += Textbox_Enter;
+            Textbox.Leave += Textbox_Leave;
+        }
+
+        //textbox获得焦点
+        private void Textbox_Enter(object sender, EventArgs e)
+        {
+            if (textboxHasText == false)
+                Textbox.Text = "";
+
+            Textbox.ForeColor = Color.Black;
+        }
+        //textbox失去焦点
+        private void Textbox_Leave(object sender, EventArgs e)
+        {
+            if (Textbox.Text == "")
+            {
+                Textbox.Text = "请输入关键字";
+                Textbox.ForeColor = Color.LightGray;
+                textboxHasText = false;
+            }
+            else
+                textboxHasText = true;
+        }
+
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            string keyWord = searchTextBox.Text;
-            if (keyWord == "")
+            string keyWord = Textbox.Text;
+            if (keyWord == ""||keyWord == "请输入关键字")
             {
                 MessageBox.Show("请输入关键字！");
                 return;
