@@ -28,37 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.searchButton = new System.Windows.Forms.Button();
             this.Textbox = new System.Windows.Forms.TextBox();
             this.sinaCheckBox = new System.Windows.Forms.CheckBox();
             this.zhihuCheckBox = new System.Windows.Forms.CheckBox();
             this.hupuCheckBox = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.hotButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.VisualBtn = new System.Windows.Forms.Button();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(506, 158);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(78, 25);
-            this.searchButton.TabIndex = 0;
-            this.searchButton.Text = "开始搜索";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // Textbox
             // 
-            this.Textbox.Location = new System.Drawing.Point(237, 158);
+            this.Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Textbox.Location = new System.Drawing.Point(39, 43);
             this.Textbox.Name = "Textbox";
-            this.Textbox.Size = new System.Drawing.Size(263, 21);
+            this.Textbox.Size = new System.Drawing.Size(396, 21);
             this.Textbox.TabIndex = 1;
             this.Textbox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // sinaCheckBox
             // 
+            this.sinaCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sinaCheckBox.AutoSize = true;
-            this.sinaCheckBox.Location = new System.Drawing.Point(237, 221);
+            this.sinaCheckBox.Location = new System.Drawing.Point(78, 99);
             this.sinaCheckBox.Name = "sinaCheckBox";
             this.sinaCheckBox.Size = new System.Drawing.Size(72, 16);
             this.sinaCheckBox.TabIndex = 2;
@@ -68,8 +64,9 @@
             // 
             // zhihuCheckBox
             // 
+            this.zhihuCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.zhihuCheckBox.AutoSize = true;
-            this.zhihuCheckBox.Location = new System.Drawing.Point(478, 221);
+            this.zhihuCheckBox.Location = new System.Drawing.Point(321, 99);
             this.zhihuCheckBox.Name = "zhihuCheckBox";
             this.zhihuCheckBox.Size = new System.Drawing.Size(48, 16);
             this.zhihuCheckBox.TabIndex = 4;
@@ -79,66 +76,117 @@
             // 
             // hupuCheckBox
             // 
+            this.hupuCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.hupuCheckBox.AutoSize = true;
-            this.hupuCheckBox.Location = new System.Drawing.Point(353, 221);
+            this.hupuCheckBox.Location = new System.Drawing.Point(195, 99);
             this.hupuCheckBox.Name = "hupuCheckBox";
             this.hupuCheckBox.Size = new System.Drawing.Size(72, 16);
             this.hupuCheckBox.TabIndex = 5;
-            this.hupuCheckBox.Text = "虎扑社区";
+            this.hupuCheckBox.Text = "百度贴吧";
             this.hupuCheckBox.UseVisualStyleBackColor = true;
             this.hupuCheckBox.CheckedChanged += new System.EventHandler(this.hupuCheckBox_CheckedChanged);
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(253, 364);
+            this.textBox2.Location = new System.Drawing.Point(-15, 414);
             this.textBox2.Name = "textBox2";
             this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(238, 14);
+            this.textBox2.Size = new System.Drawing.Size(503, 14);
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = "联系我们：123456789@sina.com";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // hotButton
             // 
-            this.hotButton.Location = new System.Drawing.Point(237, 263);
+            this.hotButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.hotButton.Location = new System.Drawing.Point(39, 231);
             this.hotButton.Name = "hotButton";
-            this.hotButton.Size = new System.Drawing.Size(263, 23);
+            this.hotButton.Size = new System.Drawing.Size(396, 41);
             this.hotButton.TabIndex = 8;
             this.hotButton.Text = "点击此处获取当前热门话题";
             this.hotButton.UseVisualStyleBackColor = true;
             this.hotButton.Click += new System.EventHandler(this.hotButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(39, 299);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(396, 37);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "热点监控";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.VisualBtn);
+            this.panel3.Controls.Add(this.zhihuCheckBox);
+            this.panel3.Controls.Add(this.Textbox);
+            this.panel3.Controls.Add(this.searchButton);
+            this.panel3.Controls.Add(this.sinaCheckBox);
+            this.panel3.Controls.Add(this.hotButton);
+            this.panel3.Controls.Add(this.hupuCheckBox);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(465, 460);
+            this.panel3.TabIndex = 12;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.searchButton.Location = new System.Drawing.Point(179, 143);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(111, 50);
+            this.searchButton.TabIndex = 0;
+            this.searchButton.Text = "开始搜索";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // VisualBtn
+            // 
+            this.VisualBtn.Location = new System.Drawing.Point(195, 367);
+            this.VisualBtn.Name = "VisualBtn";
+            this.VisualBtn.Size = new System.Drawing.Size(83, 23);
+            this.VisualBtn.TabIndex = 10;
+            this.VisualBtn.Text = "数据可视化";
+            this.VisualBtn.UseVisualStyleBackColor = true;
+            this.VisualBtn.Click += new System.EventHandler(this.VisualBtn_Click);
+            // 
             // Form1
             // 
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(745, 404);
-            this.Controls.Add(this.hotButton);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.hupuCheckBox);
-            this.Controls.Add(this.zhihuCheckBox);
-            this.Controls.Add(this.sinaCheckBox);
-            this.Controls.Add(this.Textbox);
-            this.Controls.Add(this.searchButton);
+            this.ClientSize = new System.Drawing.Size(465, 460);
+            this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Form1";
+            this.Text = "Super Spider";
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
 
         #endregion
-
-        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox Textbox;
         private System.Windows.Forms.CheckBox sinaCheckBox;
         private System.Windows.Forms.CheckBox zhihuCheckBox;
         private System.Windows.Forms.CheckBox hupuCheckBox;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button hotButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button VisualBtn;
     }
 }
 

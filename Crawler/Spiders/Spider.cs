@@ -13,7 +13,11 @@ namespace Spider_Baidu
     {
   
     }
+<<<<<<< HEAD
     public class Spider_Baidu_HOSTPOST : HTSpider
+=======
+    public class Spider_Baidu_HOSTPOST:HTSpider
+>>>>>>> bcbb2a4b552d96add6a511166d6258a827299a34
     {
         public List<TopPost> list;
 
@@ -68,7 +72,11 @@ namespace Spider_Baidu
             HtmlNode LookFor = doc.DocumentNode;
             SearchResult result = new SearchResult();
             HtmlNodeCollection ResultHerf = doc.DocumentNode.SelectNodes(".//a[contains(@href,'fr=good')]");
+<<<<<<< HEAD
             if (ResultHerf != null)
+=======
+            if (ResultHerf!=null)
+>>>>>>> bcbb2a4b552d96add6a511166d6258a827299a34
             {
                 for (int i = 0; i < 30; i++)
                 {
@@ -87,43 +95,53 @@ namespace Spider_Baidu
         }
         private void Parse(object sender,OnCompletedEventArgs args)
         {
+
+            string url = "";
+            url = Console.ReadLine();
+            LookFor(url);
+            //HotTop();
             //尝试历史
 
             //HtmlWeb webClient = new HtmlWeb();
             //HtmlWeb webClient2 = new HtmlWeb();
-            
+
             //Encoding encoder = Encoding.GetEncoding("utf-8");
             //HtmlAgilityPack.HtmlDocument doc = webClient.Load("http://tieba.baidu.com/hottopic/browse/topicList?res_type=1&red_tag=q0593629036");
             //Encoding encoder2 = Encoding.GetEncoding("utf-8");
-            //HtmlAgilityPack.HtmlDocument doc2 = webClient2.Load("https://tieba.baidu.com/f/good?kw=校花的贴身高手");
-            ////HtmlNode htmlNode = doc.DocumentNode;
-            ////HtmlNodeCollection hrefList = doc.DocumentNode.SelectNodes(".//a[@href]");
-            ////HtmlNodeCollection titleList = doc.DocumentNode.SelectNodes(".//a");
-            ////HtmlNodeCollection emList = doc.DocumentNode.SelectNodes(".//p");
-            ////HtmlNodeCollection HotList = doc.DocumentNode.SelectNodes(".//span");
-            ////int i ,j = 1,k = 3;
-            ////for ( i=12;i<32;i++)
-            ////{
+            //HtmlAgilityPack.HtmlDocument doc2 = webClient2.Load("https://tieba.baidu.com/f/good?kw=秦时明月");
+            //HtmlNode htmlNode = doc.DocumentNode;
+            //HtmlNodeCollection hrefList = doc.DocumentNode.SelectNodes(".//a[@href]");
+            //HtmlNodeCollection titleList = doc.DocumentNode.SelectNodes(".//a");
+            //HtmlNodeCollection emList = doc.DocumentNode.SelectNodes(".//p");
+            //HtmlNodeCollection HotList = doc.DocumentNode.SelectNodes(".//span");
+            //int i, j = 1, k = 3;
+            //for (i = 12; i < 32; i++)
+            //{
 
-            ////    Console.WriteLine("热帖标题："+titleList[i].InnerText);
-            ////    Console.WriteLine("热帖简述："+emList[j].InnerText);
-            ////    Console.WriteLine("热度："+HotList[k].InnerText);
-            ////    Console.WriteLine("链接："+hrefList[i].Attributes["href"].Value);
-            ////    k = k + 2;
-            ////    j++;
-            ////}
+            //    Console.WriteLine("热帖标题：" + titleList[i].InnerText);
+            //    Console.WriteLine("热帖简述：" + emList[j].InnerText);
+            //    Console.WriteLine("热度：" + HotList[k].InnerText);
+            //    Console.WriteLine("链接：" + hrefList[i].Attributes["href"].Value);
+            //    k = k + 2;
+            //    j++;
+            //}
             //HtmlNode LookFor = doc2.DocumentNode;
             //HtmlNodeCollection ResultTitle = doc2.DocumentNode.SelectNodes(".//a[@title]");
             //HtmlNodeCollection ResultHerf = doc2.DocumentNode.SelectNodes(".//a[contains(@href,'fr=good')]");
-            
+
+            ////for (int i = 0; i < 30; i++)
+            ////{
+            ////    int j = i + 15;
+            ////    Console.WriteLine("帖子：" + ResultTitle[j].Attributes["title"].Value);
+            ////    Console.WriteLine("帖子链接为：" + "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value);
+            ////}
             //for (int i = 0; i < 30; i++)
             //{
             //    int j = i + 15;
-            //    Console.WriteLine("帖子："+ResultTitle[j].Attributes["title"].Value);
-            //    Console.WriteLine("帖子链接为："+ "https://tieba.baidu.com"+ResultHerf[i].Attributes["href"].Value );
+            //    Console.WriteLine("帖子：" + ResultHerf[i].Attributes["title"].Value);
+            //    Console.WriteLine("帖子链接为：" + "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value);
             //}
-          
-           
+
             //Console.Write(args.PageSource);
         }
     }

@@ -145,28 +145,5 @@ namespace WindowsFormsApp1
         {
 
         }
-
-        //public void Add()
-        //{
-        //    Invoke(new MethodInvoker(delegate ()
-        //    {
-        //        //do something... 
-
-        //        foreach (var search in wSearchResults)
-        //        {
-        //            TextBox text = new TextBox();
-        //            text.Multiline = true;
-        //            text.AutoSize = true;
-
-        //            text.Width = this.Width/4;
-        //          //  text.Height = this.Height;
-
-        //            text.Text += search.ToString();
-        //            mainPanel.Controls.Add(text);
-        //        }
-
-        //    }));
-
-        //}
     }
 }

@@ -54,9 +54,12 @@
   <ItemGroup>
     <Compile Include="MainProgram.cs" />
     <Compile Include="SearchResult.cs" />
+<<<<<<< HEAD
     <Compile Include="ShowResult.cs">
       <SubType>Component</SubType>
     </Compile>
+=======
+>>>>>>> bcbb2a4b552d96add6a511166d6258a827299a34
     <Compile Include="TopPost.cs" />
     <Compile Include="Spider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
