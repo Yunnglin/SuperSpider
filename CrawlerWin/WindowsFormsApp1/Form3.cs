@@ -13,7 +13,7 @@ using Spider_Baidu;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form3 : Form
+    public partial class Form3 : MetroFramework.Forms.MetroForm
     {
         public Form3()
         {
@@ -52,7 +52,6 @@ namespace WindowsFormsApp1
                 int index = this.dataGridView3.Rows.Add();
                 this.dataGridView3.Rows[index].Cells[0].Value = m.Title;
                 this.dataGridView3.Rows[index].Cells[1].Value = m.Heat;
-                //this.dataGridView3.Rows[index].Cells[2].Value = m.Content;
                 this.dataGridView3.Rows[index].Cells[2].Value = m.html;
                 dataGridView3.InvalidateRow(index);
             }

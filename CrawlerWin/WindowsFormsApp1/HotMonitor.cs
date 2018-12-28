@@ -13,7 +13,7 @@ using Spider_ZHIHU;
 
 namespace WindowsFormsApp1
 {
-    public partial class HotMonitor : Form
+    public partial class HotMonitor : MetroFramework.Forms.MetroForm
     {
         string foldPath;
         Timer timer1;

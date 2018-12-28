@@ -15,7 +15,7 @@ using System.IO;
 namespace WindowsFormsApp1
 {
     
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         CheckBox[] info = new CheckBox[3];
         Boolean textboxHasText;//判断输入框是否有文本
