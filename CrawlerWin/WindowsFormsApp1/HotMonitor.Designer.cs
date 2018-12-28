@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.panel1 = new System.Windows.Forms.Panel();
             this.ResumeBtn = new System.Windows.Forms.Button();
             this.StopBtn = new System.Windows.Forms.Button();

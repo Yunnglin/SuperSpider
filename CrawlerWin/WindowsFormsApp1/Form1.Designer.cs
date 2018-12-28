@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Textbox = new System.Windows.Forms.TextBox();
             this.sinaCheckBox = new System.Windows.Forms.CheckBox();
             this.zhihuCheckBox = new System.Windows.Forms.CheckBox();

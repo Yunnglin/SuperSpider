@@ -5,7 +5,7 @@
   encoding: "UTF8",
 
   // 每个时间节点最多显示的条目数。
-  max_number: 10,
+  max_number: 15,
 
   // 控制是否显示顶部附加信息文字。
   showMessage: true,
@@ -34,13 +34,13 @@
   changeable_color: false,
 
   // 附加信息内容。
-  itemLabel: "微博热搜Top10",
+  itemLabel: "微博热搜Top15",
   typeLabel: "",
   // 榜首项目信息的水平位置 。
   item_x: 400,
   
   // 时间点间隔时间。
-  interval_time: 0.3,
+  interval_time: 0.4,
   
   // 上方文字水平高度。
   text_y: -50,
@@ -51,7 +51,7 @@
   offset: 300,
 
   // 长度小于display_barInfo的bar将不显示barInfo。
-  display_barInfo: 450,
+  display_barInfo: 400,
 
   // 使用计数器
   // 注意！使用计时器和使用类型目前不能兼容，即不能同时开启！
