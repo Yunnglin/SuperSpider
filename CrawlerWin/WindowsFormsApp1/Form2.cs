@@ -38,8 +38,9 @@ namespace WindowsFormsApp1
             zhihu = z;
             hupu = h;
             this.key = key;
+            this.Width = 820;
             Crawling();
-         
+            
         }
 
         private void Crawling()
@@ -112,20 +113,21 @@ namespace WindowsFormsApp1
                 Invoke(new MethodInvoker(delegate ()
                 {
                     //do something... 
-
+                    
                     foreach (var search in answer.AnswerList)
                     {
-                        TextBox text = new TextBox();
-                        text.Multiline = true;
-                        text.AutoSize = true;
+                        Win_ZHIHU_ANSWER a = new Win_ZHIHU_ANSWER(search);
+                        flowLayoutPanel1.Controls.Add(a);
+                        //TextBox text = new TextBox();
+                        //text.Multiline = true;
+                        //text.AutoSize = true;
 
-                        text.Width = this.Width / 4;
-                        //  text.Height = this.Height;
+                        //text.Width = this.Width / 4;
+                        ////  text.Height = this.Height;
 
-                        text.Text += search.ToString();
-                        mainPanel.Controls.Add(text);
+                        //text.Text += search.ToString();
+                        //mainPanel.Controls.Add(text);
                     }
-
                 }));
             });
         }

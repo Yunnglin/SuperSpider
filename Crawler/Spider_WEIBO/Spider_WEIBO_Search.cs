@@ -120,6 +120,7 @@ namespace Spider_WEIBO
                 }
                 catch (Exception e)
                 {
+                    Console.WriteLine(e.Message);
                 }
             }
         }

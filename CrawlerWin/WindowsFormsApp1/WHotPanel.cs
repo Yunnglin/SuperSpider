@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
                     hotDgree.Text = p.HotDegree;
                     url = new LinkLabel();
                     url.Text = p.Url;
-                    //this.url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.url_LinkClicked);
+
                     this.Controls.Add(rank);
                     this.Controls.Add(title);
                     this.Controls.Add(hotDgree);
@@ -48,11 +48,6 @@ namespace WindowsFormsApp1
                     
                    
                 }
-                //void url_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
-                //{
-                //    this.url.Link.LinkData = "[图片]http://www.sina.com";
-                //    System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
-                //}
             }
         }
     }
