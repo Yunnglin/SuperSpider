@@ -163,9 +163,18 @@ namespace Spider_ZHIHU
 
         private void MultiParse(Object sendor,OnCompletedEventArgs args)
         {
-            String strRef = @"RichText ztext"" itemProp=""text"">[\s|\S]+?<";
-            String multiLine = new Regex(strRef).Match(args.PageSource).Value.Substring(32);
-            AnswerList[Count - 1].MultiLine = Regex.Replace(multiLine, @"<[\s|\S]+?>", "").Trim('<');
+            try
+            {
+                String strRef = @"RichText ztext"" itemProp=""text"">[\s|\S]+?<";
+                String multiLine = new Regex(strRef).Match(args.PageSource).Value.Substring(32);
+                AnswerList[Count - 1].MultiLine = Regex.Replace(multiLine, @"<[\s|\S]+?>", "").Trim('<');
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                AnswerList[Count - 1].MultiLine = "无";
+            }
+            
         }
     }
 }
