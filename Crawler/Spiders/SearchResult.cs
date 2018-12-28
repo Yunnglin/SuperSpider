@@ -15,7 +15,8 @@ namespace Spider_Baidu
         {
             lists = new List<SearchResult>();
         }
-        public SearchResult(string Tit,String Url)
+        public SearchResult(string Tit, String Url)
+
         {
             this.Title = Tit;
             this.Url = Url;

@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿using Spider_Baidu;
+
+namespace WindowsFormsApp1
 {
     partial class Form2
     {
@@ -31,6 +33,8 @@
             this.searchTabControl = new System.Windows.Forms.TabControl();
             this.sinaTabPage = new System.Windows.Forms.TabPage();
             this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.BaiduPanel = new ShowResult(key);
+            this.BaiduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
             this.searchTabControl.SuspendLayout();
@@ -95,7 +99,8 @@
             this.hupuTabPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.hupuTabPage.Size = new System.Drawing.Size(561, 329);
             this.hupuTabPage.TabIndex = 2;
-            this.hupuTabPage.Text = "虎扑社区";
+            this.hupuTabPage.Text = "百度贴吧";
+            this.hupuTabPage.Controls.Add(BaiduPanel);
             this.hupuTabPage.UseVisualStyleBackColor = true;
             // 
             // Form2
@@ -117,6 +122,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl searchTabControl;
+        private System.Windows.Forms.Panel BaiduPanel;
         private System.Windows.Forms.TabPage zhihuTabPage;
         private System.Windows.Forms.TabPage hupuTabPage;
         private System.Windows.Forms.TabPage sinaTabPage;

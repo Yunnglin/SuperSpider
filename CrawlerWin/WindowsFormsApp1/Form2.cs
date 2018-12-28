@@ -10,22 +10,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spider_WEIBO;
 using Spider_ZHIHU;
-//using Spider_HUPU;
+using Spider_Baidu;
+
 
 namespace WindowsFormsApp1
 {
     public partial class Form2 : MetroFramework.Forms.MetroForm
     {
-        public Form2()
+        public Form2(String keyword)
         {
+            this.key = keyword;
             InitializeComponent();
-            this.Show();
+            this.Show();            
         }
-
+        String key;
         bool weibo = false;
         bool zhihu = false;
         bool hupu = false;
-        string key = "";
+     
 
         //List<WSearchResult> wSearchResults = new List<WSearchResult>();
         ConcurrentQueue<WSearchResult> wSearchResults = new ConcurrentQueue<WSearchResult>();
@@ -130,7 +132,8 @@ namespace WindowsFormsApp1
 
         public void hupuCrawling()
         {
-
+            //ShowResult newpanel = new ShowResult();
+            //newpanel.Show();
         }
 
         private void mainPanel_Paint(object sender, PaintEventArgs e)
