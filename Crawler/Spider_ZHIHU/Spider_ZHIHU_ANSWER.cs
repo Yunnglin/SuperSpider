@@ -32,7 +32,11 @@ namespace Spider_ZHIHU
             return await Task.Run(() =>
             {
                 //爬行搜索api
-                searchSpider.GetFunc(new Uri("https://www.zhihu.com/api/v4/search_v3?t=general&q=" + key + "&correction=1&offset=0&limit=20&show_all_topics=0&search_hash_id=5db763fd484e1b10478ed46f3e1e7f64&vertical_info=0%2C1%2C0%2C1%2C1%2C0%2C0%2C0%2C0%2C1"));//ContinueWith((a)=> { Console.WriteLine(a); });
+                searchSpider.GetFunc(new Uri("https://www.zhihu.com/api/v4/search_v3?t=general&q=" + key + "&correction=1&offset=0&limit="+max+"&show_all_topics=0&search_hash_id=5db763fd484e1b10478ed46f3e1e7f64&vertical_info=0%2C1%2C0%2C1%2C1%2C0%2C0%2C0%2C0%2C1")).Wait();//ContinueWith((a)=> { Console.WriteLine(a); });
+                for(int i=0;i<max/20;i++)
+                {
+                    searchSpider.GetFunc(new Uri("https://www.zhihu.com/api/v4/search_v3?t=general&q=" + key + "&correction=1&offset="+(i+1)*20+"&limit=20&show_all_topics=0&search_hash_id=5db763fd484e1b10478ed46f3e1e7f64&vertical_info=0%2C1%2C0%2C1%2C1%2C0%2C0%2C0%2C0%2C1"));
+                }
                 while (true)
                 {
                     //爬取5个问题
@@ -40,7 +44,7 @@ namespace Spider_ZHIHU
                     {
                         break;
                     }
-                    if (searchSpider.answerUrls.IsEmpty)
+                    if (getAnswerSpider.spiderCount>10)
                     {
                         continue;
                     }
@@ -110,13 +114,23 @@ namespace Spider_ZHIHU
         private int index;
         private Object lock1;
         private Object lock2;
+        public int spiderCount { get; private set; }
         public List<Answer_ZHIHU> AnswerList { get; private set; }
         private HTSpider multiSpider;
         public GetAnswerSpider_ZHIHU()
         {
+            spiderCount = 0;
             lock1 = new Object();
             lock2 = new Object();
             this.AnswerList = new List<Answer_ZHIHU>();
+            OnStart += (s, args) =>
+            {
+                spiderCount++;
+            };
+            OnCompleted += (s, args) =>
+            {
+                spiderCount--;
+            };
             OnCompleted += Parse;
             OnError += (s, e) =>
             {

@@ -27,14 +27,16 @@ namespace WindowsFormsApp1
             headPanel = new Win_ZHIHU_HeadPanel(answer.Title, answer.MultiLine, answer.Url);
             
             int height = headPanel.GetHeight();
+            int temp;
             foreach(var detail in answer.List)
             {
                 Win_ZHIHU_Response response = new Win_ZHIHU_Response(detail);
                 this.Controls.Add(response);
-                height += response.GetHeight();
+                temp = (int) (1.2 * response.GetHeight());
+                height += temp;
             }
             this.Controls.Add(headPanel);
-            this.Height = height;
+            this.Height = height+200;
         }
 
     }
@@ -187,7 +189,7 @@ namespace WindowsFormsApp1
 
         public int GetHeight()
         {
-            return this.Height;
+            return this.content.Height + this.basicInfo.Height;
         }
     }
 }
