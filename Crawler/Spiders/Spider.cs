@@ -70,19 +70,25 @@ namespace Spider_Baidu
             SearchResult result = new SearchResult();
             HtmlNodeCollection ResultHerf = doc.DocumentNode.SelectNodes(".//a[contains(@href,'fr=good')]");
 
-            if (ResultHerf != null)
-
+            try
             {
-                for (int i = 0; i < 30; i++)
+                if (ResultHerf != null)
                 {
-                    int j = i + 15;
-                    String urlget = "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value;
-                    SearchResult newResult = new SearchResult(ResultHerf[i].Attributes["title"].Value, urlget);
-                    result.lists.Add(newResult);
+                    for (int i = 0; i < 30; i++)
+                    {
+                        int j = i + 15;
+                        String urlget = "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value;
+                        SearchResult newResult = new SearchResult(ResultHerf[i].Attributes["title"].Value, urlget);
+                        result.lists.Add(newResult);
+                    }
+                    return result;
                 }
-                return result;
-            }
-            else
+                else
+                {
+                    Console.WriteLine("关键词无效，未查到该帖子");
+                    return null;
+                }
+            }catch(Exception ex)
             {
                 Console.WriteLine("关键词无效，未查到该帖子");
                 return null;

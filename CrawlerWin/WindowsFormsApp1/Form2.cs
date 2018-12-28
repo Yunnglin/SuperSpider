@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
     {
         public Form2(String keyword)
         {
+            this.Font = new Font("Microsoft YaHei UI", 12, FontStyle.Regular);
             this.key = keyword;
             InitializeComponent();
             this.Show();            
@@ -64,22 +65,17 @@ namespace WindowsFormsApp1
             Spider_WEIBO_Search s = new Spider_WEIBO_Search(key, 2);
             s.StartCrawling().ContinueWith((S) =>
             {
-                //wSearchResults = s.searchResults;
-                //Add();
-                //foreach (var search in s.searchResults)
-                //{
-                //    Console.WriteLine(search);
-                //}
                 Invoke(new MethodInvoker(delegate ()
                 {
                     //do something... 
 
                     foreach (var search in s.searchResults)
                     {
-                        Panel p = new Panel();
+                        Panel p = new FlowLayoutPanel();
+                        
                         Label label1 = new Label();
                         label1.AutoSize = true;
-                        label1.Text = "ID:"+search.Name;
+                        label1.Text = "ID: "+search.Name;
                         TextBox t = new TextBox();
                         t.Multiline = true;
                         t.Width=400;
@@ -88,10 +84,6 @@ namespace WindowsFormsApp1
                
                         p.Controls.Add(label1);
                         p.Controls.Add(t);
-                        //text.Width = this.Width / 4;
-                        //  text.Height = this.Height;
-
-                        //text.Text += search.ToString();
                         mainPanel.Controls.Add(p);
                     }
 
@@ -104,12 +96,7 @@ namespace WindowsFormsApp1
             Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key);
             answer.StartCrawling().ContinueWith((S) =>
             {
-                //wSearchResults = s.searchResults;
-                //Add();
-                //foreach (var search in s.searchResults)
-                //{
-                //    Console.WriteLine(search);
-                //}
+
                 Invoke(new MethodInvoker(delegate ()
                 {
                     //do something... 
@@ -118,15 +105,7 @@ namespace WindowsFormsApp1
                     {
                         Win_ZHIHU_ANSWER a = new Win_ZHIHU_ANSWER(search);
                         flowLayoutPanel1.Controls.Add(a);
-                        //TextBox text = new TextBox();
-                        //text.Multiline = true;
-                        //text.AutoSize = true;
 
-                        //text.Width = this.Width / 4;
-                        ////  text.Height = this.Height;
-
-                        //text.Text += search.ToString();
-                        //mainPanel.Controls.Add(text);
                     }
                 }));
             });
@@ -134,8 +113,7 @@ namespace WindowsFormsApp1
 
         public void hupuCrawling()
         {
-            //ShowResult newpanel = new ShowResult();
-            //newpanel.Show();
+ 
         }
 
         private void mainPanel_Paint(object sender, PaintEventArgs e)

@@ -90,7 +90,7 @@ namespace Spider_Baidu
             }
             catch(Exception e)
             {
-                MessageBox.Show("关键词无效！");
+                MessageBox.Show("未找到百度贴吧相关内容");
             }
         }
 

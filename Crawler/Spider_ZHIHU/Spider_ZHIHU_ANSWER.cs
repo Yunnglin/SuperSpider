@@ -9,9 +9,9 @@ using HT.Spider;
 
 namespace Spider_ZHIHU
 {
-    public class Spider_ZHIHU_ANSWER:IController
+    public class Spider_ZHIHU_ANSWER : IController
     {
-        public List<Answer_ZHIHU> AnswerList{get => getAnswerSpider.AnswerList; } 
+        public List<Answer_ZHIHU> AnswerList { get => getAnswerSpider.AnswerList; }
         private String key;
         private SearchSpider_ZHIHU searchSpider;
         private GetAnswerSpider_ZHIHU getAnswerSpider;
@@ -43,17 +43,17 @@ namespace Spider_ZHIHU
                     String url;
                     if (searchSpider.answerUrls.TryDequeue(out url))
                     {
-                        getAnswerSpider.GetFunc(new Uri("https://www.zhihu.com/api/v4/questions/"+url+"/answers?include=data%5B%2A%5D.is_normal%2Cadmin_closed_comment%2Creward_info%2Cis_collapsed%2Cannotation_action%2Cannotation_detail%2Ccollapse_reason%2Cis_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2Cvoteup_count%2Creshipment_settings%2Ccomment_permission%2Ccreated_time%2Cupdated_time%2Creview_info%2Crelevant_info%2Cquestion%2Cexcerpt%2Crelationship.is_authorized%2Cis_author%2Cvoting%2Cis_thanked%2Cis_nothelp%2Cis_labeled%3Bdata%5B%2A%5D.mark_infos%5B%2A%5D.url%3Bdata%5B%2A%5D.author.follower_count%2Cbadge%5B%2A%5D.topics&limit=5&offset=0&platform=desktfop&sort_by=default")).Wait();
+                        getAnswerSpider.GetFunc(new Uri("https://www.zhihu.com/api/v4/questions/" + url + "/answers?include=data%5B%2A%5D.is_normal%2Cadmin_closed_comment%2Creward_info%2Cis_collapsed%2Cannotation_action%2Cannotation_detail%2Ccollapse_reason%2Cis_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2Cvoteup_count%2Creshipment_settings%2Ccomment_permission%2Ccreated_time%2Cupdated_time%2Creview_info%2Crelevant_info%2Cquestion%2Cexcerpt%2Crelationship.is_authorized%2Cis_author%2Cvoting%2Cis_thanked%2Cis_nothelp%2Cis_labeled%3Bdata%5B%2A%5D.mark_infos%5B%2A%5D.url%3Bdata%5B%2A%5D.author.follower_count%2Cbadge%5B%2A%5D.topics&limit=5&offset=0&platform=desktfop&sort_by=default")).Wait();
                     }
                 }
                 return true;
             });
-            
+
         }
 
     }
 
-    public class SearchSpider_ZHIHU:HTSpider
+    public class SearchSpider_ZHIHU : HTSpider
     {
         public ConcurrentQueue<String> answerUrls;
         private int count;
@@ -76,10 +76,10 @@ namespace Spider_ZHIHU
             Downloaded = true;
             String strRef = @"""url"":""https:\/\/api.zhihu.com\/questions\/[0-9]+?""";
             MatchCollection matches = new Regex(strRef).Matches(e.PageSource);
-            foreach(Match match in matches)
+            foreach (Match match in matches)
             {
                 //爬取5个问题
-                if (count>4)
+                if (count > 4)
                 {
                     break;
                 }
@@ -89,16 +89,16 @@ namespace Spider_ZHIHU
                     answerUrls.Enqueue(url);
                     count++;
                 }
-                catch(Exception exception)
+                catch (Exception exception)
                 {
                     Console.WriteLine(exception.Message);
                 }
-                
+
             }
         }
     }
 
-    class GetAnswerSpider_ZHIHU:HTSpider
+    class GetAnswerSpider_ZHIHU : HTSpider
     {
         public int Count { get; private set; }
         private int index;
@@ -125,9 +125,9 @@ namespace Spider_ZHIHU
             };
         }
 
-        private void Parse(Object sendor,OnCompletedEventArgs args)
+        private void Parse(Object sendor, OnCompletedEventArgs args)
         {
-            lock(lock1)
+            lock (lock1)
             {
                 Count++;
                 Answer_ZHIHU answer = new Answer_ZHIHU();
@@ -140,7 +140,7 @@ namespace Spider_ZHIHU
                     strRef = @"url"":""[\s|\S]+?""";
                     answer.Url = new Regex(strRef).Match(matches[0].Value).Value.Substring(5).Trim('"');
                     answer.Url = Regex.Replace(answer.Url, @"\/api\/v4\/questions", @"/question");
-                    
+
                     String author, content, voteUp;
                     answer.List = new List<AnswerDetail>();
                     foreach (Match match in matches)
@@ -161,11 +161,12 @@ namespace Spider_ZHIHU
             }
         }
 
-        private void MultiParse(Object sendor,OnCompletedEventArgs args)
+        private void MultiParse(Object sendor, OnCompletedEventArgs args)
         {
             String strRef = @"RichText ztext"" itemProp=""text"">[\s|\S]+?<";
             String multiLine = new Regex(strRef).Match(args.PageSource).Value.Substring(32);
             AnswerList[Count - 1].MultiLine = Regex.Replace(multiLine, @"<[\s|\S]+?>", "").Trim('<');
+
         }
     }
 }
