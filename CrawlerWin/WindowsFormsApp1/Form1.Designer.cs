@@ -35,9 +35,9 @@
             this.hotButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.VisualBtn = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,8 @@
             // 
             this.sinaCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sinaCheckBox.AutoSize = true;
+            this.sinaCheckBox.Checked = true;
+            this.sinaCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sinaCheckBox.Location = new System.Drawing.Point(24, 101);
             this.sinaCheckBox.Name = "sinaCheckBox";
             this.sinaCheckBox.Size = new System.Drawing.Size(89, 19);
@@ -66,6 +68,8 @@
             // 
             this.zhihuCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.zhihuCheckBox.AutoSize = true;
+            this.zhihuCheckBox.Checked = true;
+            this.zhihuCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.zhihuCheckBox.Location = new System.Drawing.Point(267, 101);
             this.zhihuCheckBox.Name = "zhihuCheckBox";
             this.zhihuCheckBox.Size = new System.Drawing.Size(59, 19);
@@ -78,6 +82,8 @@
             // 
             this.hupuCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.hupuCheckBox.AutoSize = true;
+            this.hupuCheckBox.Checked = true;
+            this.hupuCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.hupuCheckBox.Location = new System.Drawing.Point(141, 101);
             this.hupuCheckBox.Name = "hupuCheckBox";
             this.hupuCheckBox.Size = new System.Drawing.Size(89, 19);
@@ -126,6 +132,15 @@
             this.panel3.Size = new System.Drawing.Size(357, 465);
             this.panel3.TabIndex = 12;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 402);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(319, 45);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "联系我们：\r\n\r\nhttps://github.com/Yunnglin/SuperSpider";
+            // 
             // VisualBtn
             // 
             this.VisualBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -148,15 +163,6 @@
             this.searchButton.Text = "开始搜索";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 402);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 45);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "联系我们：\r\n\r\nhttps://github.com/Yunnglin/SuperSpider";
             // 
             // Form1
             // 
