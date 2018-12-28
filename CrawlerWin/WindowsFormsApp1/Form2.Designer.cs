@@ -33,6 +33,8 @@ namespace WindowsFormsApp1
         {
             this.searchTabControl = new System.Windows.Forms.TabControl();
             this.sinaTabPage = new System.Windows.Forms.TabPage();
+            
+
             this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -112,6 +114,7 @@ namespace WindowsFormsApp1
             this.hupuTabPage.TabIndex = 2;
             this.hupuTabPage.Text = "百度贴吧";
             this.hupuTabPage.UseVisualStyleBackColor = true;
+            
             // 
             // Form2
             // 
