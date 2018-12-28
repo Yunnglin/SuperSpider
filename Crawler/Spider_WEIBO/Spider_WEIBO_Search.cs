@@ -69,19 +69,20 @@ namespace Spider_WEIBO
                     this.GetFunc(new Uri("https://s.weibo.com/weibo?q=" + key + "&Refer=article_weibo&page=" + i)).Wait();
                 }
             });
-             return true;
+            return true;
         }
-           
-     
 
-            private void Parse(object sendor, OnCompletedEventArgs args)
+
+
+        private void Parse(object sendor, OnCompletedEventArgs args)
         {
-            HtmlDocument doc = new HtmlDocument();
-            doc.LoadHtml(args.PageSource);
-            HtmlNodeCollection cards = doc.DocumentNode.SelectNodes("//div[@class='card']");
-            foreach (var card in cards)
+            try
             {
-                try
+                HtmlDocument doc = new HtmlDocument();
+                doc.LoadHtml(args.PageSource);
+                HtmlNodeCollection cards = doc.DocumentNode.SelectNodes("//div[@class='card']");
+
+                foreach (var card in cards)
                 {
                     HtmlNode cardfeed = card.SelectSingleNode(".//div[@class='card-feed']");
 
@@ -118,10 +119,10 @@ namespace Spider_WEIBO
                     searchResults.Enqueue(new WSearchResult(count, name, content, post, like, comment, from));
                     //Console.WriteLine(count);
                 }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }

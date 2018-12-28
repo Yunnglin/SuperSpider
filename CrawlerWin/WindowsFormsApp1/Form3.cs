@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public Form3()
         {
             InitializeComponent();
-          
+            this.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Regular);
         }
         public void weiBo(List<WHotPoint> whots)
         {

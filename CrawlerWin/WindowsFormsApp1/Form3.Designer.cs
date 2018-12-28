@@ -71,7 +71,7 @@
             this.hotTabControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hotTabControl.Name = "hotTabControl";
             this.hotTabControl.SelectedIndex = 0;
-            this.hotTabControl.Size = new System.Drawing.Size(947, 615);
+            this.hotTabControl.Size = new System.Drawing.Size(755, 506);
             this.hotTabControl.TabIndex = 0;
             // 
             // sinaTabPage
@@ -81,7 +81,7 @@
             this.sinaTabPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sinaTabPage.Name = "sinaTabPage";
             this.sinaTabPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sinaTabPage.Size = new System.Drawing.Size(939, 586);
+            this.sinaTabPage.Size = new System.Drawing.Size(747, 477);
             this.sinaTabPage.TabIndex = 0;
             this.sinaTabPage.Text = "微博";
             this.sinaTabPage.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
             this.sinaPanel.Location = new System.Drawing.Point(3, 4);
             this.sinaPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sinaPanel.Name = "sinaPanel";
-            this.sinaPanel.Size = new System.Drawing.Size(933, 578);
+            this.sinaPanel.Size = new System.Drawing.Size(741, 469);
             this.sinaPanel.TabIndex = 0;
             this.sinaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sinaPanel_Paint);
             // 
@@ -111,7 +111,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(933, 578);
+            this.dataGridView1.Size = new System.Drawing.Size(741, 469);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -142,7 +142,7 @@
             this.zhihuTabPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.zhihuTabPage.Name = "zhihuTabPage";
             this.zhihuTabPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.zhihuTabPage.Size = new System.Drawing.Size(939, 586);
+            this.zhihuTabPage.Size = new System.Drawing.Size(747, 586);
             this.zhihuTabPage.TabIndex = 1;
             this.zhihuTabPage.Text = "知乎";
             this.zhihuTabPage.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
             this.zhihuPanel.Location = new System.Drawing.Point(3, 4);
             this.zhihuPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.zhihuPanel.Name = "zhihuPanel";
-            this.zhihuPanel.Size = new System.Drawing.Size(933, 578);
+            this.zhihuPanel.Size = new System.Drawing.Size(741, 578);
             this.zhihuPanel.TabIndex = 0;
             this.zhihuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.zhihuPanel_Paint);
             // 
@@ -172,7 +172,7 @@
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(933, 578);
+            this.dataGridView2.Size = new System.Drawing.Size(741, 578);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -202,7 +202,7 @@
             this.hupuTabPage.Location = new System.Drawing.Point(4, 25);
             this.hupuTabPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hupuTabPage.Name = "hupuTabPage";
-            this.hupuTabPage.Size = new System.Drawing.Size(939, 586);
+            this.hupuTabPage.Size = new System.Drawing.Size(747, 586);
             this.hupuTabPage.TabIndex = 2;
             this.hupuTabPage.Text = "百度贴吧";
             this.hupuTabPage.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 30;
-            this.dataGridView3.Size = new System.Drawing.Size(939, 586);
+            this.dataGridView3.Size = new System.Drawing.Size(747, 586);
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
@@ -238,13 +238,13 @@
             // 
             this.bd_url.HeaderText = "超链接";
             this.bd_url.Name = "bd_url";
-            this.bd_url.Width = 200;
+            this.bd_url.Width = 350;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 715);
+            this.ClientSize = new System.Drawing.Size(809, 606);
             this.Controls.Add(this.hotTabControl);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form3";
@@ -274,14 +274,14 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage hupuTabPage;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bd_tittle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bd_degree;
-        private System.Windows.Forms.DataGridViewLinkColumn bd_url;
         private System.Windows.Forms.DataGridViewTextBoxColumn title_sina;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotdegree_sina;
         private System.Windows.Forms.DataGridViewLinkColumn url_sina;
         private System.Windows.Forms.DataGridViewTextBoxColumn title_zhihu;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotdegree_zhihu;
         private System.Windows.Forms.DataGridViewLinkColumn url_zhihu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bd_tittle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bd_degree;
+        private System.Windows.Forms.DataGridViewLinkColumn bd_url;
     }
 }
