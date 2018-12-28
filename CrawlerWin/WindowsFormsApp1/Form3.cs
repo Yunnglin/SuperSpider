@@ -69,12 +69,34 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if(e.ColumnIndex==2)
+            {
+                String str = (string)this.dataGridView1.Rows[e.RowIndex].Cells[2].Value;
+                System.Diagnostics.Process.Start(str);
+            }
         }
 
         private void hupuPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                String str = (string)this.dataGridView2.Rows[e.RowIndex].Cells[2].Value;
+                System.Diagnostics.Process.Start(str);
+            }
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                String str = (string)this.dataGridView3.Rows[e.RowIndex].Cells[2].Value;
+                System.Diagnostics.Process.Start(str);
+            }
         }
     }
 }

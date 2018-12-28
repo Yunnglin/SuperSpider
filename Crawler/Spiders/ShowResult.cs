@@ -13,7 +13,7 @@ namespace Spider_Baidu
 
         public DataGridView dataGridView1;
         public DataGridViewTextBoxColumn Name;
-        public DataGridViewTextBoxColumn Link;
+        public DataGridViewLinkColumn Link;
         public ShowResult(String key)
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace Spider_Baidu
             panel1 = new System.Windows.Forms.Panel();
             dataGridView1 = new System.Windows.Forms.DataGridView();
             Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Link = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Link = new System.Windows.Forms.DataGridViewLinkColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(dataGridView1)).BeginInit();
             SuspendLayout();
@@ -89,8 +89,12 @@ namespace Spider_Baidu
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            String str = (string)this.dataGridView1.Rows[e.RowIndex].Cells[1].Value;
-            System.Diagnostics.Process.Start(str);
+            if (e.ColumnIndex == 1)
+            {
+                String str = (string)this.dataGridView1.Rows[e.RowIndex].Cells[1].Value;
+                System.Diagnostics.Process.Start(str);
+            }
+            
         }
     }
    
