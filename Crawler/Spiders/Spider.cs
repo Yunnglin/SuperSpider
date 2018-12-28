@@ -13,11 +13,8 @@ namespace Spider_Baidu
     {
   
     }
-<<<<<<< HEAD
     public class Spider_Baidu_HOSTPOST : HTSpider
-=======
-    public class Spider_Baidu_HOSTPOST:HTSpider
->>>>>>> bcbb2a4b552d96add6a511166d6258a827299a34
+
     {
         public List<TopPost> list;
 
@@ -72,11 +69,9 @@ namespace Spider_Baidu
             HtmlNode LookFor = doc.DocumentNode;
             SearchResult result = new SearchResult();
             HtmlNodeCollection ResultHerf = doc.DocumentNode.SelectNodes(".//a[contains(@href,'fr=good')]");
-<<<<<<< HEAD
+
             if (ResultHerf != null)
-=======
-            if (ResultHerf!=null)
->>>>>>> bcbb2a4b552d96add6a511166d6258a827299a34
+
             {
                 for (int i = 0; i < 30; i++)
                 {

@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
             this.sinaTabPage = new System.Windows.Forms.TabPage();
             this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.BaiduPanel = new ShowResult(key);
+            this.BaiduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
             this.searchTabControl.SuspendLayout();

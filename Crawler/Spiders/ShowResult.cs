@@ -10,7 +10,7 @@ namespace Spider_Baidu
    public class ShowResult:Panel
     {
         public Panel panel1;
-        public Label label1;
+
         public DataGridView dataGridView1;
         public DataGridViewTextBoxColumn Name;
         public DataGridViewTextBoxColumn Link;
@@ -22,7 +22,6 @@ namespace Spider_Baidu
         public void InitializeComponent()
         {
             panel1 = new System.Windows.Forms.Panel();
-            label1 = new System.Windows.Forms.Label();
             dataGridView1 = new System.Windows.Forms.DataGridView();
             Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Link = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -32,22 +31,12 @@ namespace Spider_Baidu
             // 
             // panel1
             // 
-            this.Controls.Add(this.label1);
+         
             this.Controls.Add(this.dataGridView1);
             this.Location = new System.Drawing.Point(131, 79);
             this.Size = new System.Drawing.Size(799, 284);
             this.TabIndex = 0;
             this.Visible = true;
-            // 
-            // label1
-            // 
-            label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            label1.Location = new System.Drawing.Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(245, 33);
-            label1.TabIndex = 1;
-            label1.Text = "搜索结果如下：";
             
             // 
             // dataGridView1
@@ -57,7 +46,7 @@ namespace Spider_Baidu
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             Name,Link});
-            dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             dataGridView1.Location = new System.Drawing.Point(0, 36);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 27;
