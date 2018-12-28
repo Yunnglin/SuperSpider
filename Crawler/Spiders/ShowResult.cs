@@ -78,12 +78,19 @@ namespace Spider_Baidu
             Spider_Baidu_HOSTPOST resu = new Spider_Baidu_HOSTPOST();
             SearchResult result = resu.LookFor(str);
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            foreach (var res in result.lists)
+            try
             {
-                int index = this.dataGridView1.Rows.Add();
-                this.dataGridView1.Rows[index].Cells[0].Value = res.Title;
-                this.dataGridView1.Rows[index].Cells[1].Value = res.Url;
-                dataGridView1.InvalidateRow(index);
+                foreach (var res in result.lists)
+                {
+                    int index = this.dataGridView1.Rows.Add();
+                    this.dataGridView1.Rows[index].Cells[0].Value = res.Title;
+                    this.dataGridView1.Rows[index].Cells[1].Value = res.Url;
+                    dataGridView1.InvalidateRow(index);
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("关键词无效！");
             }
         }
 
