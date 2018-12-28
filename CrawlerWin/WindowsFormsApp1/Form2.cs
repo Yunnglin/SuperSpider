@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
         public void hupuCrawling()
         {
 
-            this.BaiduPanel = new ShowResult(key);
+            this.BaiduPanel = new ShowResult(key,num);
             this.BaiduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hupuTabPage.Controls.Add(BaiduPanel);
         }
