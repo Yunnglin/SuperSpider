@@ -53,7 +53,9 @@ namespace Spider_Baidu
             TopPost List = new TopPost();
             for (i = 12; i < 32; i++)
             {
-                TopPost newTop = new TopPost(titleList[i].InnerText, hrefList[i].Attributes["href"].Value, HotList[k].InnerText, emList[j].InnerText);
+                String link = hrefList[i].Attributes["href"].Value;
+                String newlink = link.Replace(';', '&');
+                TopPost newTop = new TopPost(titleList[i].InnerText, newlink, HotList[k].InnerText, emList[j].InnerText);
                 List.TopPosts.Add(newTop);
                 k = k + 2;
                 j++;
