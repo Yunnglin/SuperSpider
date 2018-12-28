@@ -129,13 +129,16 @@ namespace WindowsFormsApp1
                 Invoke(new MethodInvoker(delegate ()
                 {
                     //do something... 
-                    
-                    foreach (var search in answer.AnswerList)
+                    for(int i = answer.AnswerList.Count-1; i>=0;i--)
                     {
-                        Win_ZHIHU_ANSWER a = new Win_ZHIHU_ANSWER(search);
-                        flowLayoutPanel1.Controls.Add(a);
-
+                        flowLayoutPanel1.Controls.Add(new Win_ZHIHU_ANSWER(answer.AnswerList[i]));
                     }
+                    //foreach (var search in answer.AnswerList)
+                    //{
+                    //    Win_ZHIHU_ANSWER a = new Win_ZHIHU_ANSWER(search);
+                    //    flowLayoutPanel1.Controls.Add(a);
+
+                    //}
                 }));
             });
         }

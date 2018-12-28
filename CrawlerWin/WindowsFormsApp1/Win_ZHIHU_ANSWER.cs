@@ -19,24 +19,18 @@ namespace WindowsFormsApp1
         /// <param name="answer"></param>
         public Win_ZHIHU_ANSWER(Answer_ZHIHU answer)
         {
-            //this.AutoSize = true;
+            this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Location = new System.Drawing.Point(3, 3);
             this.Size = new System.Drawing.Size(760, 236);
             this.TabIndex = 3;
+            this.MinimumSize = new System.Drawing.Size(760, 0);
             headPanel = new Win_ZHIHU_HeadPanel(answer.Title, answer.MultiLine, answer.Url);
-            
-            int height = headPanel.GetHeight();
-            int temp;
-            foreach(var detail in answer.List)
+            for(int i = answer.List.Count-1;i>=0;i--)
             {
-                Win_ZHIHU_Response response = new Win_ZHIHU_Response(detail);
-                this.Controls.Add(response);
-                temp = (int) (1.2 * response.GetHeight());
-                height += temp;
+                this.Controls.Add(new Win_ZHIHU_Response(answer.List[i]));
             }
             this.Controls.Add(headPanel);
-            this.Height = height+200;
         }
 
     }
@@ -59,6 +53,7 @@ namespace WindowsFormsApp1
                 Location = new System.Drawing.Point(0, 0),
                 Padding = new System.Windows.Forms.Padding(0, 5, 0, 0),
                 Size = new System.Drawing.Size(156, 25),
+                MaximumSize = new System.Drawing.Size(750, 0),
                 TabIndex = 0,
                 TabStop = true,
                 Name = url

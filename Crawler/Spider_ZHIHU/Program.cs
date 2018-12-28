@@ -11,7 +11,7 @@ namespace Spider_ZHIHU
         static void Main(string[] args)
         {
             
-            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER("雪中悍刀行",30);
+            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER("雪中悍刀行",50);
             answer.StartCrawling().Wait();
             Console.Write("finish");
         }
