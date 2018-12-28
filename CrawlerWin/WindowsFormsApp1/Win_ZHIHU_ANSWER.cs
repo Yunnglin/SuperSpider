@@ -19,13 +19,22 @@ namespace WindowsFormsApp1
         /// <param name="answer"></param>
         public Win_ZHIHU_ANSWER(Answer_ZHIHU answer)
         {
+            //this.AutoSize = true;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Location = new System.Drawing.Point(3, 3);
+            this.Size = new System.Drawing.Size(760, 236);
+            this.TabIndex = 3;
             headPanel = new Win_ZHIHU_HeadPanel(answer.Title, answer.MultiLine, answer.Url);
-            this.Controls.Add(headPanel);
+            
+            int height = headPanel.GetHeight();
             foreach(var detail in answer.List)
             {
                 Win_ZHIHU_Response response = new Win_ZHIHU_Response(detail);
                 this.Controls.Add(response);
+                height += response.GetHeight();
             }
+            this.Controls.Add(headPanel);
+            this.Height = height;
         }
 
     }
@@ -37,48 +46,62 @@ namespace WindowsFormsApp1
 
         public Win_ZHIHU_HeadPanel(String title,String multiLine, String url)
         {
-            this.title.Text = title;
-            this.title.AutoSize = true;
-            this.title.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.title.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.title.LinkColor = System.Drawing.Color.Black;
-            this.title.Location = new System.Drawing.Point(0, 0);
-            this.title.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.title.Size = new System.Drawing.Size(156, 25);
-            this.title.TabIndex = 0;
-            this.title.TabStop = true;
-            this.title.Name = url;
+            this.title = new LinkLabel
+            {
+                Text = title,
+                AutoSize = true,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
+                LinkColor = System.Drawing.Color.Black,
+                Location = new System.Drawing.Point(0, 0),
+                Padding = new System.Windows.Forms.Padding(0, 5, 0, 0),
+                Size = new System.Drawing.Size(156, 25),
+                TabIndex = 0,
+                TabStop = true,
+                Name = url
+            };
             this.title.LinkClicked += OpenWeb;
 
-            this.multiLine.Text = multiLine;
-            this.multiLine.AutoSize = true;
-            this.multiLine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.multiLine.Location = new System.Drawing.Point(0, 25);
-            this.multiLine.Margin = new System.Windows.Forms.Padding(0);
-            this.multiLine.Name = "label12";
-            this.multiLine.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
-            this.multiLine.Size = new System.Drawing.Size(405, 35);
-            this.multiLine.TabIndex = 1;
+            this.multiLine = new Label
+            {
+                Text = multiLine,
+                AutoSize = true,
+                Dock = System.Windows.Forms.DockStyle.Fill,
+                Location = new System.Drawing.Point(0, 25),
+                Margin = new System.Windows.Forms.Padding(0),
+                Name = "label12",
+                Padding = new System.Windows.Forms.Padding(0, 15, 0, 5),
+                Size = new System.Drawing.Size(405, 35),
+                TabIndex = 1
+            };
 
             this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.title);
+
             this.Controls.Add(this.multiLine);
+            this.Controls.Add(this.title);
             this.Dock = System.Windows.Forms.DockStyle.Top;
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.Name = title;
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.Size = new System.Drawing.Size(756, 72);
+            this.Size = new System.Drawing.Size(760, 72);
             this.TabIndex = 0;
-
+            
             
         }
 
         private void OpenWeb(object sendor, LinkLabelLinkClickedEventArgs args)
         {
             System.Diagnostics.Process.Start("iexplore.exe", title.Name);
+        }
+
+        public int GetHeight()
+        {
+
+            int height = this.Height;
+            return height;
         }
     }
 
@@ -89,28 +112,36 @@ namespace WindowsFormsApp1
 
         public Win_ZHIHU_Response(AnswerDetail detail)
         {
-            Label userName = new Label();
-            userName.AutoSize = true;
-            userName.Dock = System.Windows.Forms.DockStyle.Top;
-            userName.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            userName.Location = new System.Drawing.Point(0, 0);
-            userName.Size = new System.Drawing.Size(85, 19);
-            userName.TabIndex = 0;
-            userName.Text = "作者："+detail.Responder;
+            this.SuspendLayout();
+            Label userName = new Label
+            {
+                AutoSize = true,
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
+                Location = new System.Drawing.Point(0, 0),
+                Size = new System.Drawing.Size(85, 19),
+                TabIndex = 0,
+                Text = "作者：" + detail.Responder
+            };
 
-            Label upNumber = new Label();
-            upNumber.AutoSize = true;
-            upNumber.Dock = System.Windows.Forms.DockStyle.Bottom;
-            upNumber.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            upNumber.Location = new System.Drawing.Point(0, 19);
-            upNumber.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            upNumber.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            upNumber.Size = new System.Drawing.Size(76, 25);
-            upNumber.TabIndex = 2;
-            upNumber.Text = "赞数：" + detail.UpNumber;
+            Label upNumber = new Label
+            {
+                AutoSize = true,
+                Dock = System.Windows.Forms.DockStyle.Bottom,
+                Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
+                Location = new System.Drawing.Point(0, 19),
+                Margin = new System.Windows.Forms.Padding(3, 10, 3, 0),
+                Padding = new System.Windows.Forms.Padding(0, 10, 0, 0),
+                Size = new System.Drawing.Size(76, 25),
+                TabIndex = 2,
+                Text = "赞数：" + detail.UpNumber
+            };
 
-            this.basicInfo.AutoSize = true;
-            this.basicInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.basicInfo = new Panel
+            {
+                AutoSize = true,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
             this.basicInfo.Controls.Add(userName);
             this.basicInfo.Controls.Add(upNumber);
             this.basicInfo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -120,31 +151,42 @@ namespace WindowsFormsApp1
             this.basicInfo.Size = new System.Drawing.Size(754, 56);
             this.basicInfo.TabIndex = 0;
 
-            Label contentText = new Label();
-            contentText.AutoSize = true;
-            contentText.Dock = System.Windows.Forms.DockStyle.Fill;
-            contentText.Location = new System.Drawing.Point(3, 0);
-            contentText.Name = "label9";
-            contentText.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            contentText.Size = new System.Drawing.Size(742, 85);
-            contentText.TabIndex = 0;
-            contentText.Text = detail.Content;
+            Label contentText = new Label
+            {
+                AutoSize = true,
+                Dock = System.Windows.Forms.DockStyle.Fill,
+                Location = new System.Drawing.Point(3, 0),
+                Name = "label9",
+                Padding = new System.Windows.Forms.Padding(0, 0, 0, 10),
+                Size = new System.Drawing.Size(742, 85),
+                TabIndex = 0,
+                Text = detail.Content
+            };
 
+            //contentText.Height /= 2;
             this.content = new FlowLayoutPanel();
             this.content.Controls.Add(contentText);
-            this.content.Dock = System.Windows.Forms.DockStyle.Top;
+            this.content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.content.Location = new System.Drawing.Point(0, 56);
             this.content.Size = contentText.Size;
             this.content.TabIndex = 1;
 
-            this.AutoSize = true;
+            //this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.basicInfo);
+
             this.Controls.Add(this.content);
+            this.Controls.Add(this.basicInfo);
             this.Dock = System.Windows.Forms.DockStyle.Top;
             this.Location = new System.Drawing.Point(0, 72);
-            this.Size = new System.Drawing.Size(756, 115);
+            this.Size = content.Size + new System.Drawing.Size(0,basicInfo.Height);
+            //this.Height /= 2;
             this.TabIndex = 1;
+            this.ResumeLayout(true);
+        }
+
+        public int GetHeight()
+        {
+            return this.Height;
         }
     }
 }
