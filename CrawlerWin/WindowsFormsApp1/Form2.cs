@@ -53,7 +53,6 @@ namespace WindowsFormsApp1
              * 12.28
              * 李沛昊
              */
-             ///不服？
             this.Width = 855;
             if (weibo)
             {
@@ -123,7 +122,7 @@ namespace WindowsFormsApp1
         public void zhihuCrawling()
         {
   
-            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key,num/5+1);
+            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key,num);
             answer.StartCrawling().ContinueWith((S) =>
             {
 
@@ -144,7 +143,7 @@ namespace WindowsFormsApp1
         public void hupuCrawling()
         {
 
-            this.BaiduPanel = new ShowResult(key);
+            this.BaiduPanel = new ShowResult(key,num);
             this.BaiduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hupuTabPage.Controls.Add(BaiduPanel);
         }

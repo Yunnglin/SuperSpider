@@ -151,5 +151,10 @@ namespace WindowsFormsApp1
            Console.WriteLine( fileInfo.FullName);
             System.Diagnostics.Process.Start(fileInfo.FullName);
         }
+
+        private void textBoxNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
