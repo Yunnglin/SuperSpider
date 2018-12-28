@@ -36,14 +36,14 @@
             this.sinaTabPage = new System.Windows.Forms.TabPage();
             this.sinaPanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.title_sina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotdegree_sina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.url_sina = new System.Windows.Forms.DataGridViewLinkColumn();
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.zhihuPanel = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.title_sina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotdegree_sina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.url_sina = new System.Windows.Forms.DataGridViewLinkColumn();
             this.title_zhihu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotdegree_zhihu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.url_zhihu = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -115,26 +115,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // title_sina
-            // 
-            this.title_sina.HeaderText = "标题";
-            this.title_sina.Name = "title_sina";
-            this.title_sina.Width = 200;
-            // 
-            // hotdegree_sina
-            // 
-            this.hotdegree_sina.HeaderText = "热度";
-            this.hotdegree_sina.Name = "hotdegree_sina";
-            this.hotdegree_sina.Width = 150;
-            // 
-            // url_sina
-            // 
-            this.url_sina.HeaderText = "超链接";
-            this.url_sina.Name = "url_sina";
-            this.url_sina.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.url_sina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.url_sina.Width = 300;
-            // 
             // zhihuTabPage
             // 
             this.zhihuTabPage.Controls.Add(this.zhihuPanel);
@@ -203,11 +183,31 @@
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
+            // title_sina
+            // 
+            this.title_sina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.title_sina.HeaderText = "标题";
+            this.title_sina.Name = "title_sina";
+            // 
+            // hotdegree_sina
+            // 
+            this.hotdegree_sina.HeaderText = "热度";
+            this.hotdegree_sina.Name = "hotdegree_sina";
+            this.hotdegree_sina.Width = 150;
+            // 
+            // url_sina
+            // 
+            this.url_sina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.url_sina.HeaderText = "超链接";
+            this.url_sina.Name = "url_sina";
+            this.url_sina.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.url_sina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // title_zhihu
             // 
+            this.title_zhihu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.title_zhihu.HeaderText = "回答";
             this.title_zhihu.Name = "title_zhihu";
-            this.title_zhihu.Width = 400;
             // 
             // hotdegree_zhihu
             // 
@@ -217,17 +217,17 @@
             // 
             // url_zhihu
             // 
+            this.url_zhihu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.url_zhihu.HeaderText = "超链接";
             this.url_zhihu.Name = "url_zhihu";
             this.url_zhihu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.url_zhihu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.url_zhihu.Width = 300;
             // 
             // bd_tittle
             // 
+            this.bd_tittle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.bd_tittle.HeaderText = "主题";
             this.bd_tittle.Name = "bd_tittle";
-            this.bd_tittle.Width = 200;
             // 
             // bd_degree
             // 
@@ -237,9 +237,9 @@
             // 
             // bd_url
             // 
+            this.bd_url.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.bd_url.HeaderText = "超链接";
             this.bd_url.Name = "bd_url";
-            this.bd_url.Width = 350;
             // 
             // Form3
             // 

@@ -17,10 +17,12 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : MetroFramework.Forms.MetroForm
     {
-        public Form2(String keyword)
+        int num = 20;
+        public Form2(String keyword,int num)
         {
            this.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Regular);
             this.key = keyword;
+            this.num = num;
             InitializeComponent();
             this.Show();            
         }
@@ -69,7 +71,8 @@ namespace WindowsFormsApp1
 
         public void weiboCrawling()
         {
-            Spider_WEIBO_Search s = new Spider_WEIBO_Search(key, 2);
+
+            Spider_WEIBO_Search s = new Spider_WEIBO_Search(key, num/20+1);
             s.StartCrawling().ContinueWith((S) =>
             {
                 Invoke(new MethodInvoker(delegate ()
@@ -119,7 +122,8 @@ namespace WindowsFormsApp1
 
         public void zhihuCrawling()
         {
-            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key);
+  
+            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key,num/5+1);
             answer.StartCrawling().ContinueWith((S) =>
             {
 

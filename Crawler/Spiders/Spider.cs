@@ -62,7 +62,7 @@ namespace Spider_Baidu
             }
             return List;
         }
-        public SearchResult LookFor(String input)   //关键词搜索
+        public SearchResult LookFor(String input,int max=30)   //关键词搜索
         {
             HtmlWeb webClient = new HtmlWeb();
             string url = "https://tieba.baidu.com/f/good?kw=" + input;
@@ -75,7 +75,7 @@ namespace Spider_Baidu
 
             if (ResultHerf != null)
             {
-                for (int i = 0; i < 30; i++)
+                for (int i = 0; i < max; i++)
                 {
                     int j = i + 15;
                     String urlget = "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value;

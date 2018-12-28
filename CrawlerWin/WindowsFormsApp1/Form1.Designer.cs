@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.MaximizeBox = false;//使最大化窗口失效
+             //下一句用来禁止对窗口大小进行拖拽
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Textbox = new System.Windows.Forms.TextBox();
             this.sinaCheckBox = new System.Windows.Forms.CheckBox();
             this.zhihuCheckBox = new System.Windows.Forms.CheckBox();
@@ -38,6 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.VisualBtn = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxNum = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +110,7 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(36, 304);
             this.button1.Name = "button1";
@@ -117,6 +122,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.textBoxNum);
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.VisualBtn);
             this.panel3.Controls.Add(this.zhihuCheckBox);
@@ -144,7 +151,7 @@
             // 
             // VisualBtn
             // 
-            this.VisualBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.VisualBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.VisualBtn.Location = new System.Drawing.Point(37, 378);
             this.VisualBtn.Name = "VisualBtn";
@@ -157,7 +164,7 @@
             // searchButton
             // 
             this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchButton.Location = new System.Drawing.Point(123, 154);
+            this.searchButton.Location = new System.Drawing.Point(210, 152);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(111, 50);
             this.searchButton.TabIndex = 0;
@@ -165,9 +172,26 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 23);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "搜索数量：";
+            // 
+            // textBoxNum
+            // 
+            this.textBoxNum.Location = new System.Drawing.Point(37, 172);
+            this.textBoxNum.Name = "textBoxNum";
+            this.textBoxNum.Size = new System.Drawing.Size(114, 29);
+            this.textBoxNum.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(394, 623);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -192,6 +216,8 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button VisualBtn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxNum;
+        private System.Windows.Forms.Label label2;
     }
 }
 
