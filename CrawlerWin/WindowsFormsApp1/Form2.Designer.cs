@@ -32,9 +32,11 @@
             this.sinaTabPage = new System.Windows.Forms.TabPage();
             this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
             this.searchTabControl.SuspendLayout();
             this.sinaTabPage.SuspendLayout();
+            this.zhihuTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchTabControl
@@ -74,6 +76,7 @@
             // 
             // zhihuTabPage
             // 
+            this.zhihuTabPage.Controls.Add(this.flowLayoutPanel1);
             this.zhihuTabPage.Location = new System.Drawing.Point(4, 25);
             this.zhihuTabPage.Name = "zhihuTabPage";
             this.zhihuTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -81,6 +84,16 @@
             this.zhihuTabPage.TabIndex = 1;
             this.zhihuTabPage.Text = "知乎";
             this.zhihuTabPage.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(783, 421);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // hupuTabPage
             // 
@@ -103,6 +116,8 @@
             this.Text = "获取到的信息";
             this.searchTabControl.ResumeLayout(false);
             this.sinaTabPage.ResumeLayout(false);
+            this.zhihuTabPage.ResumeLayout(false);
+            this.zhihuTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -114,5 +129,6 @@
         private System.Windows.Forms.TabPage hupuTabPage;
         private System.Windows.Forms.TabPage sinaTabPage;
         private System.Windows.Forms.FlowLayoutPanel mainPanel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
