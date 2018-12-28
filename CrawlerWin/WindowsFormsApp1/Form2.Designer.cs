@@ -44,28 +44,25 @@ namespace WindowsFormsApp1
             // 
             // searchTabControl
             // 
-            this.searchTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.searchTabControl.Controls.Add(this.sinaTabPage);
             this.searchTabControl.Controls.Add(this.zhihuTabPage);
             this.searchTabControl.Controls.Add(this.hupuTabPage);
-            this.searchTabControl.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.searchTabControl.Location = new System.Drawing.Point(3, 79);
+            this.searchTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTabControl.Location = new System.Drawing.Point(20, 75);
             this.searchTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchTabControl.Name = "searchTabControl";
             this.searchTabControl.SelectedIndex = 0;
-            this.searchTabControl.Size = new System.Drawing.Size(759, 444);
+            this.searchTabControl.Size = new System.Drawing.Size(721, 424);
             this.searchTabControl.TabIndex = 0;
             // 
             // sinaTabPage
             // 
             this.sinaTabPage.Controls.Add(this.mainPanel);
-            this.sinaTabPage.Location = new System.Drawing.Point(4, 29);
+            this.sinaTabPage.Location = new System.Drawing.Point(4, 25);
             this.sinaTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sinaTabPage.Name = "sinaTabPage";
             this.sinaTabPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sinaTabPage.Size = new System.Drawing.Size(751, 411);
+            this.sinaTabPage.Size = new System.Drawing.Size(713, 395);
             this.sinaTabPage.TabIndex = 0;
             this.sinaTabPage.Text = "微博";
             this.sinaTabPage.UseVisualStyleBackColor = true;
@@ -77,7 +74,7 @@ namespace WindowsFormsApp1
             this.mainPanel.Location = new System.Drawing.Point(3, 2);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(745, 407);
+            this.mainPanel.Size = new System.Drawing.Size(707, 391);
             this.mainPanel.TabIndex = 0;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint_1);
             // 

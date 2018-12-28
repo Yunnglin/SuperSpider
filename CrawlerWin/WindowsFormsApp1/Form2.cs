@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
     {
         public Form2(String keyword)
         {
-            this.Font = new Font("Microsoft YaHei UI", 12, FontStyle.Regular);
+           this.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Regular);
             this.key = keyword;
             InitializeComponent();
             this.Show();            
@@ -72,18 +72,37 @@ namespace WindowsFormsApp1
                     foreach (var search in s.searchResults)
                     {
                         Panel p = new FlowLayoutPanel();
-                        
-                        Label label1 = new Label();
+                        p.Width = this.Width / 2;
+                        p.Height = this.Height / 2;
+
+                        TextBox label1 = new TextBox();
                         label1.AutoSize = true;
+                        label1.BorderStyle= System.Windows.Forms.BorderStyle.None;
                         label1.Text = "ID: "+search.Name;
+                        label1.Width = p.Width;
+
+                        Label label2 = new Label();
+                        label2.AutoSize = true;
+                        label2.Text =  search.Post+"  "+search.Comment+"  "+search.Like;
+                        label2.Width = p.Width;
+
+                        Label label3 = new Label();
+                        label1.AutoSize = true;
+                        label3.Text =  search.From;
+                        label3.Width = p.Width;
+
                         TextBox t = new TextBox();
                         t.Multiline = true;
-                        t.Width=400;
-                        t.Height = 300;
+                        t.Width = p.Width-5;
+                        t.Height = p.Height *2/ 3;
+                        
                         t.Text = search.Content;
-               
+
+                      
                         p.Controls.Add(label1);
                         p.Controls.Add(t);
+                        p.Controls.Add(label2);
+                        p.Controls.Add(label3);
                         mainPanel.Controls.Add(p);
                     }
 
