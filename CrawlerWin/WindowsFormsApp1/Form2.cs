@@ -80,7 +80,7 @@ namespace WindowsFormsApp1
                     {
                         Panel p = new FlowLayoutPanel();
                         p.Width = this.Width / 2;
-                        p.Height = this.Height / 2;
+                        p.Height = this.Height / 3;
 
                         TextBox label1 = new TextBox();
                         label1.AutoSize = true;

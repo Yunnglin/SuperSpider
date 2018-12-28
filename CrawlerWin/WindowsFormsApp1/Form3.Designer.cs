@@ -42,11 +42,11 @@
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.zhihuPanel = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.hupuTabPage = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.title_zhihu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotdegree_zhihu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.url_zhihu = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.hupuTabPage = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.bd_tittle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bd_degree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bd_url = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -142,7 +142,7 @@
             this.zhihuTabPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.zhihuTabPage.Name = "zhihuTabPage";
             this.zhihuTabPage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.zhihuTabPage.Size = new System.Drawing.Size(747, 586);
+            this.zhihuTabPage.Size = new System.Drawing.Size(747, 477);
             this.zhihuTabPage.TabIndex = 1;
             this.zhihuTabPage.Text = "知乎";
             this.zhihuTabPage.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
             this.zhihuPanel.Location = new System.Drawing.Point(3, 4);
             this.zhihuPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.zhihuPanel.Name = "zhihuPanel";
-            this.zhihuPanel.Size = new System.Drawing.Size(741, 578);
+            this.zhihuPanel.Size = new System.Drawing.Size(741, 469);
             this.zhihuPanel.TabIndex = 0;
             this.zhihuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.zhihuPanel_Paint);
             // 
@@ -172,29 +172,9 @@
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(741, 578);
+            this.dataGridView2.Size = new System.Drawing.Size(741, 469);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // title_zhihu
-            // 
-            this.title_zhihu.HeaderText = "回答";
-            this.title_zhihu.Name = "title_zhihu";
-            this.title_zhihu.Width = 400;
-            // 
-            // hotdegree_zhihu
-            // 
-            this.hotdegree_zhihu.HeaderText = "热度";
-            this.hotdegree_zhihu.Name = "hotdegree_zhihu";
-            this.hotdegree_zhihu.Width = 150;
-            // 
-            // url_zhihu
-            // 
-            this.url_zhihu.HeaderText = "超链接";
-            this.url_zhihu.Name = "url_zhihu";
-            this.url_zhihu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.url_zhihu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.url_zhihu.Width = 300;
             // 
             // hupuTabPage
             // 
@@ -202,7 +182,7 @@
             this.hupuTabPage.Location = new System.Drawing.Point(4, 25);
             this.hupuTabPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hupuTabPage.Name = "hupuTabPage";
-            this.hupuTabPage.Size = new System.Drawing.Size(747, 586);
+            this.hupuTabPage.Size = new System.Drawing.Size(747, 477);
             this.hupuTabPage.TabIndex = 2;
             this.hupuTabPage.Text = "百度贴吧";
             this.hupuTabPage.UseVisualStyleBackColor = true;
@@ -219,9 +199,29 @@
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 30;
-            this.dataGridView3.Size = new System.Drawing.Size(747, 586);
+            this.dataGridView3.Size = new System.Drawing.Size(747, 477);
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // title_zhihu
+            // 
+            this.title_zhihu.HeaderText = "回答";
+            this.title_zhihu.Name = "title_zhihu";
+            this.title_zhihu.Width = 400;
+            // 
+            // hotdegree_zhihu
+            // 
+            this.hotdegree_zhihu.HeaderText = "热度（/万）";
+            this.hotdegree_zhihu.Name = "hotdegree_zhihu";
+            this.hotdegree_zhihu.Width = 150;
+            // 
+            // url_zhihu
+            // 
+            this.url_zhihu.HeaderText = "超链接";
+            this.url_zhihu.Name = "url_zhihu";
+            this.url_zhihu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.url_zhihu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.url_zhihu.Width = 300;
             // 
             // bd_tittle
             // 
@@ -233,6 +233,7 @@
             // 
             this.bd_degree.HeaderText = "热度";
             this.bd_degree.Name = "bd_degree";
+            this.bd_degree.Width = 150;
             // 
             // bd_url
             // 
