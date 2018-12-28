@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             {
                 return;
             }
-            timelable.Text = myWatch.Elapsed.ToString();
+            timelable.Text = myWatch.Elapsed.ToString(@"hh\:mm\:ss"); 
             numlable.Text = w.GetCount().ToString();
             if(w.GetCount().ToString()== textBoxNum.Text)
             {
@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
             try
             {
                 timer1 = new Timer();
-                timer1.Interval = 10;
+                timer1.Interval = 100;
                 timer1.Tick += new EventHandler(timer1EventProcessor);//添加事件
                 timer1.Enabled = true;
                 timer1.Start();
