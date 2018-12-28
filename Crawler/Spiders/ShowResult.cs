@@ -14,10 +14,10 @@ namespace Spider_Baidu
         public DataGridView dataGridView1;
         public DataGridViewTextBoxColumn Name;
         public DataGridViewLinkColumn Link;
-        public ShowResult(String key)
+        public ShowResult(String key,int num)
         {
             InitializeComponent();
-            this.ShowResults(key);
+            this.ShowResults(key,num);
         }
         public void InitializeComponent()
         {
@@ -72,11 +72,11 @@ namespace Spider_Baidu
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }
-        public void ShowResults(String str)
+        public void ShowResults(String str,int num)
         {
             
             Spider_Baidu_HOSTPOST resu = new Spider_Baidu_HOSTPOST();
-            SearchResult result = resu.LookFor(str);
+            SearchResult result = resu.LookFor(str,num);
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             try
             {

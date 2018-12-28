@@ -62,7 +62,7 @@ namespace Spider_Baidu
             }
             return List;
         }
-        public SearchResult LookFor(String input)   //关键词搜索
+        public SearchResult LookFor(String input,int max)   //关键词搜索
         {
             HtmlWeb webClient = new HtmlWeb();
             string url = "https://tieba.baidu.com/f/good?kw=" + input;
@@ -75,14 +75,26 @@ namespace Spider_Baidu
 
             if (ResultHerf != null)
             {
-                for (int i = 0; i < 30; i++)
+                if (max <= ResultHerf.Count)
                 {
-                    int j = i + 15;
-                    String urlget = "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value;
-                    SearchResult newResult = new SearchResult(ResultHerf[i].Attributes["title"].Value, urlget);
-                    result.lists.Add(newResult);
+                    for (int i = 0; i < max; i++)
+                    {
+                        String urlget = "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value;
+                        SearchResult newResult = new SearchResult(ResultHerf[i].Attributes["title"].Value, urlget);
+                        result.lists.Add(newResult);
+                    }
+                    return result;
                 }
-                return result;
+                else
+                {
+                    for (int i = 0; i < ResultHerf.Count; i++)
+                    {
+                        String urlget = "https://tieba.baidu.com" + ResultHerf[i].Attributes["href"].Value;
+                        SearchResult newResult = new SearchResult(ResultHerf[i].Attributes["title"].Value, urlget);
+                        result.lists.Add(newResult);
+                    }
+                    return result;
+                }
             }
             else
             {
@@ -94,9 +106,7 @@ namespace Spider_Baidu
         private void Parse(object sender, OnCompletedEventArgs args)
         {
 
-            string url = "";
-            url = Console.ReadLine();
-            LookFor(url);
+            
             //HotTop();
             //尝试历史
 

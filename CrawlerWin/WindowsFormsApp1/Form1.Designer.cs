@@ -35,6 +35,8 @@
             this.hotButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBoxNum = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.VisualBtn = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
@@ -117,6 +119,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.textBoxNum);
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.VisualBtn);
             this.panel3.Controls.Add(this.zhihuCheckBox);
@@ -131,6 +135,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(354, 543);
             this.panel3.TabIndex = 12;
+            // 
+            // textBoxNum
+            // 
+            this.textBoxNum.Location = new System.Drawing.Point(37, 172);
+            this.textBoxNum.Name = "textBoxNum";
+            this.textBoxNum.Size = new System.Drawing.Size(114, 29);
+            this.textBoxNum.TabIndex = 13;
+            this.textBoxNum.TextChanged += new System.EventHandler(this.textBoxNum_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 23);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "搜索数量：";
             // 
             // label1
             // 
@@ -157,7 +178,7 @@
             // searchButton
             // 
             this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchButton.Location = new System.Drawing.Point(123, 154);
+            this.searchButton.Location = new System.Drawing.Point(210, 152);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(111, 50);
             this.searchButton.TabIndex = 0;
@@ -168,10 +189,12 @@
             // Form1
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(394, 623);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Super Spider";
             this.panel3.ResumeLayout(false);
@@ -192,6 +215,8 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button VisualBtn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxNum;
+        private System.Windows.Forms.Label label2;
     }
 }
 

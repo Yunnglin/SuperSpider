@@ -17,10 +17,12 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : MetroFramework.Forms.MetroForm
     {
-        public Form2(String keyword)
+        int num = 20;
+        public Form2(String keyword,int num)
         {
            this.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Regular);
             this.key = keyword;
+            this.num = num;
             InitializeComponent();
             this.Show();            
         }
@@ -68,7 +70,8 @@ namespace WindowsFormsApp1
 
         public void weiboCrawling()
         {
-            Spider_WEIBO_Search s = new Spider_WEIBO_Search(key, 2);
+
+            Spider_WEIBO_Search s = new Spider_WEIBO_Search(key, num/20+1);
             s.StartCrawling().ContinueWith((S) =>
             {
                 Invoke(new MethodInvoker(delegate ()
@@ -79,7 +82,7 @@ namespace WindowsFormsApp1
                     {
                         Panel p = new FlowLayoutPanel();
                         p.Width = this.Width / 2;
-                        p.Height = this.Height / 2;
+                        p.Height = this.Height / 3;
 
                         TextBox label1 = new TextBox();
                         label1.AutoSize = true;
@@ -118,7 +121,8 @@ namespace WindowsFormsApp1
 
         public void zhihuCrawling()
         {
-            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key);
+  
+            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key,num/5+1);
             answer.StartCrawling().ContinueWith((S) =>
             {
 
@@ -139,7 +143,7 @@ namespace WindowsFormsApp1
         public void hupuCrawling()
         {
 
-            this.BaiduPanel = new ShowResult(key);
+            this.BaiduPanel = new ShowResult(key,num);
             this.BaiduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hupuTabPage.Controls.Add(BaiduPanel);
         }

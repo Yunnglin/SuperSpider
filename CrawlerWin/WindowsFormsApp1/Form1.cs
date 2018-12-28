@@ -61,6 +61,7 @@ namespace WindowsFormsApp1
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            int num = 0;
             string keyWord = Textbox.Text;
             if (keyWord == ""||keyWord == "请输入关键字")
             {
@@ -72,8 +73,21 @@ namespace WindowsFormsApp1
                 MessageBox.Show("请选择信息来源！");
                 return;
             }
+            if (textBoxNum.Text == "")
+            {
+                MessageBox.Show("请选择爬取数量！");
+                return;
+            }
+            try
+            {
+                num = Convert.ToInt32(textBoxNum.Text);
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
 
-            Form2 form2 = new Form2(Textbox.Text);
+            Form2 form2 = new Form2(Textbox.Text,num);
             form2.Choose(keyWord,sinaCheckBox.Checked,zhihuCheckBox.Checked,hupuCheckBox.Checked);
         }
 
@@ -136,6 +150,11 @@ namespace WindowsFormsApp1
             FileInfo fileInfo = new FileInfo(@"../../../../Crawler/Visualization/bargraph.html");
            Console.WriteLine( fileInfo.FullName);
             System.Diagnostics.Process.Start(fileInfo.FullName);
+        }
+
+        private void textBoxNum_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
