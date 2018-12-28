@@ -158,32 +158,29 @@ namespace WindowsFormsApp1
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Location = new System.Drawing.Point(3, 0),
                 Name = "label9",
-                Padding = new System.Windows.Forms.Padding(5, 10, 5, 15),
+                Padding = new System.Windows.Forms.Padding(5, 10, 0, 15),
                 Size = new System.Drawing.Size(742, 85),
                 MaximumSize = new System.Drawing.Size(742, 0),
                 TabIndex = 0,
                 Text = detail.Content
             };
-
-            //contentText.Height /= 2;
-            this.content = new Panel();
-            this.content.AutoSize = true;
+            
+            this.content = new Panel
+            {
+                AutoSize = true,
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Location = new System.Drawing.Point(0, 56),
+                Size = new System.Drawing.Size(760, 100),
+                TabIndex = 1,
+            };
             this.content.Controls.Add(contentText);
-            this.content.Dock = System.Windows.Forms.DockStyle.Top;
-            this.content.Location = new System.Drawing.Point(0, 56);
-            this.content.Size = new System.Drawing.Size(760,100);
-            //this.content.Width /= 2;
-            this.content.TabIndex = 1;
 
             this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-
             this.Controls.Add(this.content);
             this.Controls.Add(this.basicInfo);
             this.Dock = System.Windows.Forms.DockStyle.Top;
             this.Location = new System.Drawing.Point(0, 72);
-            //this.Size = content.Size + new System.Drawing.Size(-200,basicInfo.Height);
-            //this.Height /= 2;
             this.TabIndex = 1;
             this.ResumeLayout(true);
         }

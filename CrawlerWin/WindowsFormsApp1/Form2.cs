@@ -46,6 +46,12 @@ namespace WindowsFormsApp1
 
         private void Crawling()
         {
+            /**
+             * 这句话别删了
+             * 12.28
+             * 李沛昊
+             */
+            this.Width = 855;
             if (weibo)
             {
                 weiboCrawling();
