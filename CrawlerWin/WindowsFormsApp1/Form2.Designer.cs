@@ -1,4 +1,5 @@
 ﻿using Spider_Baidu;
+using System;
 
 namespace WindowsFormsApp1
 {
@@ -35,6 +36,7 @@ namespace WindowsFormsApp1
             this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.BaiduPanel = new ShowResult(key);
             this.BaiduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+          
             this.zhihuTabPage = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.hupuTabPage = new System.Windows.Forms.TabPage();
