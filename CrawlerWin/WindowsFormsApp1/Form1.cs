@@ -10,11 +10,12 @@ using System.Windows.Forms;
 using Spider_WEIBO;
 using Spider_ZHIHU;
 using Spider_Baidu;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
     
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         CheckBox[] info = new CheckBox[3];
         Boolean textboxHasText;//判断输入框是否有文本
@@ -72,7 +73,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            Form2 form2 = new Form2();
+            Form2 form2 = new Form2(Textbox.Text);
             form2.Choose(keyWord,sinaCheckBox.Checked,zhihuCheckBox.Checked,hupuCheckBox.Checked);
         }
 
@@ -121,6 +122,20 @@ namespace WindowsFormsApp1
             TopPost topPost= spider_Baidu.HotTop();
             form3.baidu(topPost.TopPosts);
             form3.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HotMonitor hotMonitor = new HotMonitor();
+            hotMonitor.Show();
+        }
+
+        private void VisualBtn_Click(object sender, EventArgs e)
+        {
+            //调用系统默认的浏览器 
+            FileInfo fileInfo = new FileInfo(@"../../../../Crawler/Visualization/bargraph.html");
+           Console.WriteLine( fileInfo.FullName);
+            System.Diagnostics.Process.Start(fileInfo.FullName);
         }
     }
 }
