@@ -44,9 +44,9 @@
             // Textbox
             // 
             this.Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Textbox.Location = new System.Drawing.Point(39, 62);
+            this.Textbox.Location = new System.Drawing.Point(37, 47);
             this.Textbox.Name = "Textbox";
-            this.Textbox.Size = new System.Drawing.Size(270, 29);
+            this.Textbox.Size = new System.Drawing.Size(285, 29);
             this.Textbox.TabIndex = 1;
             this.Textbox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
@@ -56,7 +56,7 @@
             this.sinaCheckBox.AutoSize = true;
             this.sinaCheckBox.Checked = true;
             this.sinaCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.sinaCheckBox.Location = new System.Drawing.Point(15, 118);
+            this.sinaCheckBox.Location = new System.Drawing.Point(17, 106);
             this.sinaCheckBox.Name = "sinaCheckBox";
             this.sinaCheckBox.Size = new System.Drawing.Size(100, 27);
             this.sinaCheckBox.TabIndex = 2;
@@ -70,7 +70,7 @@
             this.zhihuCheckBox.AutoSize = true;
             this.zhihuCheckBox.Checked = true;
             this.zhihuCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.zhihuCheckBox.Location = new System.Drawing.Point(270, 118);
+            this.zhihuCheckBox.Location = new System.Drawing.Point(272, 106);
             this.zhihuCheckBox.Name = "zhihuCheckBox";
             this.zhihuCheckBox.Size = new System.Drawing.Size(66, 27);
             this.zhihuCheckBox.TabIndex = 4;
@@ -84,7 +84,7 @@
             this.hupuCheckBox.AutoSize = true;
             this.hupuCheckBox.Checked = true;
             this.hupuCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.hupuCheckBox.Location = new System.Drawing.Point(132, 118);
+            this.hupuCheckBox.Location = new System.Drawing.Point(134, 106);
             this.hupuCheckBox.Name = "hupuCheckBox";
             this.hupuCheckBox.Size = new System.Drawing.Size(100, 27);
             this.hupuCheckBox.TabIndex = 5;
@@ -95,11 +95,11 @@
             // hotButton
             // 
             this.hotButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.hotButton.Location = new System.Drawing.Point(38, 218);
+            this.hotButton.Location = new System.Drawing.Point(38, 231);
             this.hotButton.Name = "hotButton";
-            this.hotButton.Size = new System.Drawing.Size(270, 41);
+            this.hotButton.Size = new System.Drawing.Size(285, 41);
             this.hotButton.TabIndex = 8;
-            this.hotButton.Text = "点击此处获取当前热门话题";
+            this.hotButton.Text = "获取当前热门话题";
             this.hotButton.UseVisualStyleBackColor = true;
             this.hotButton.Click += new System.EventHandler(this.hotButton_Click);
             // 
@@ -107,9 +107,9 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(38, 277);
+            this.button1.Location = new System.Drawing.Point(36, 304);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(270, 37);
+            this.button1.Size = new System.Drawing.Size(285, 37);
             this.button1.TabIndex = 9;
             this.button1.Text = "热点监控";
             this.button1.UseVisualStyleBackColor = true;
@@ -129,25 +129,26 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(20, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(339, 499);
+            this.panel3.Size = new System.Drawing.Size(354, 543);
             this.panel3.TabIndex = 12;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(-4, 406);
+            this.label1.Location = new System.Drawing.Point(4, 483);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(347, 69);
+            this.label1.Size = new System.Drawing.Size(347, 46);
             this.label1.TabIndex = 11;
-            this.label1.Text = "联系我们：\r\n\r\nhttps://github.com/Yunnglin/SuperSpider";
+            this.label1.Text = "                            关于我们\r\nhttps://github.com/Yunnglin/SuperSpider";
             // 
             // VisualBtn
             // 
             this.VisualBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.VisualBtn.Location = new System.Drawing.Point(39, 334);
+            this.VisualBtn.Location = new System.Drawing.Point(37, 378);
             this.VisualBtn.Name = "VisualBtn";
-            this.VisualBtn.Size = new System.Drawing.Size(269, 37);
+            this.VisualBtn.Size = new System.Drawing.Size(284, 37);
             this.VisualBtn.TabIndex = 10;
             this.VisualBtn.Text = "数据可视化";
             this.VisualBtn.UseVisualStyleBackColor = true;
@@ -156,7 +157,7 @@
             // searchButton
             // 
             this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchButton.Location = new System.Drawing.Point(121, 151);
+            this.searchButton.Location = new System.Drawing.Point(123, 154);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(111, 50);
             this.searchButton.TabIndex = 0;
@@ -167,7 +168,7 @@
             // Form1
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(379, 579);
+            this.ClientSize = new System.Drawing.Size(394, 623);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
