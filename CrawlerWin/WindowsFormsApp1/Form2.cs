@@ -122,7 +122,7 @@ namespace WindowsFormsApp1
         public void zhihuCrawling()
         {
   
-            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key,num);
+            Spider_ZHIHU_ANSWER answer = new Spider_ZHIHU_ANSWER(key,num/5);
             answer.StartCrawling().ContinueWith((S) =>
             {
 
